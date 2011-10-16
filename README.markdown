@@ -30,10 +30,10 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Public functions
 
-	$.fn.styly.check(true, '#like', true);
+	$('#like').styly('check', true, false);
 	Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.
 
-	$.fn.styly.enable(false, '#like');
+	$('#like').styly('enable', true, false);
 	Enables or disables an element. You can use class selector '.styly'.
 
 ## Buy me a coffee
