@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+.styly-wrapper label {
+	cursor: pointer;
+	display: block;
+	height: 21px;
+	padding-left: 30px;
+	padding-top: 4px;
+}
+
+.check-styly			{ background: url('../img/check.png') no-repeat;          }
+.check-hover			{ background: url('../img/check.png') no-repeat 0 -25px;  }
+.check-checked			{ background: url('../img/check.png') no-repeat 0 -50px;  }
+.check-hover-checked	{ background: url('../img/check.png') no-repeat 0 -75px;  }
+.check-disabled			{ background: url('../img/check.png') no-repeat 0 -100px; cursor: default !important; }
+.check-disabled-checked	{ background: url('../img/check.png') no-repeat 0 -125px; cursor: default !important; }
+
+.radio-styly			{ background: url('../img/radio.png') no-repeat;          }
+.radio-hover			{ background: url('../img/radio.png') no-repeat 0 -25px;  }
+.radio-checked			{ background: url('../img/radio.png') no-repeat 0 -50px;  }
+.radio-hover-checked	{ background: url('../img/radio.png') no-repeat 0 -75px;  }
+.radio-disabled			{ background: url('../img/radio.png') no-repeat 0 -100px; cursor: default !important; }
+.radio-disabled-checked	{ background: url('../img/radio.png') no-repeat 0 -125px; cursor: default !important; }

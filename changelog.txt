@@ -1,0 +1,11 @@
+/**
+ * # jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
+ * --------------------------------------------------------------------------
+ *
+ * 0.1.0
+ *   - You can style checkbox elements.
+ *   - You can style radio elements.
+ *   - Function 'enable' to enable or disable the elements.
+ *   - Function 'check' to check or uncheck the elements.
+ *
+ */
