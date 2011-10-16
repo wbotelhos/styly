@@ -17,8 +17,9 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Default values
 
-	img:   'styly.gif'                 // Name of the image.
-	path:  '../img'                    // Path of the image.
+	img:     'styly.gif'                 // Name of the image.
+	path:     '../img'                   // Path of the image.
+	trigger:  true                       // Enables trigger the fuctions element like onchange.
 
 ## Usage with default values
 

@@ -157,14 +157,17 @@
 
 				path:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'../img'
 				<div class="comment">Path of the image.</div>
+
+				trigger:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true
+				<div class="comment">Enables trigger the fuctions element like onchange.</div>
 			</div>
 
 			<div class="session">Public functions:</div>
 			
-			<div class="source">$.fn.styly.check(true, '#like', true);</div>
+			<div class="source">$('#like').styly('check', true, false);</div>
 			<div class="description-code">Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.</div>
 
-			<div class="source">$.fn.styly.enable(false, '#like');</div>
+			<div class="source">$('#like').styly('enable', true);</div>
 			<div class="description-code">Enables or disables an element. You can use class selector '.styly'.</div>
 		</div>
 
