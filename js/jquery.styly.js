@@ -109,28 +109,7 @@
 					}
 
 					if (opt.trigger) {
-						var $events = $this.data('events');
-
-						if ($events) {
-							if ($events.click) {
-								$this.triggerHandler('click');
-							}
-	
-							if ($events.onchange) {
-								$this.triggerHandler('onchange');
-							}
-						}
-
-						var onclick		= $this.attr('onclick'),
-							onchange	= $this.attr('onchange');
-
-						if (onclick) {
-							window.eval.call($this[0], onclick);
-						}
-
-						if (onchange) {
-							window.eval.call($this[0], onchange);
-						}
+						methods.triggerEvents.call($this);
 					}
 				});
 			});
@@ -165,7 +144,7 @@
 			}
 
 			if (isTrigger === undefined || isTrigger) {
-				this.trigger('click').trigger('onchange');
+				methods.triggerEvents.call(this);
 			}
 
 			return this;
@@ -206,6 +185,29 @@
 			}
 
 			return this;
+		}, triggerEvents: function() {
+			var $events = this.data('events');
+
+			if ($events) {
+				if ($events.click) {
+					this.triggerHandler('click');
+				}
+
+				if ($events.onchange) {
+					this.triggerHandler('onchange');
+				}
+			}
+
+			var onclick		= this.attr('onclick'),
+				onchange	= this.attr('onchange');
+
+			if (onclick) {
+				window.eval.call(this[0], onclick);
+			}
+
+			if (onchange) {
+				window.eval.call(this[0], onchange);
+			}
 		}, uncheckByName: function(checked) {
 			var name = this.attr('name');
 
