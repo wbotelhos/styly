@@ -181,7 +181,7 @@
 					$label.addClass(disabled);
 				}
 
-				$label.css('opacity', '.6').addClass(disabled);
+				$label.css('opacity', '.6');
 			}
 
 			return this;
