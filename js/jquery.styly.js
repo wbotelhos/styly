@@ -193,8 +193,8 @@
 					this.triggerHandler('click');
 				}
 
-				if ($events.onchange) {
-					this.triggerHandler('onchange');
+				if ($events.change) {
+					this.triggerHandler('change');
 				}
 			}
 
