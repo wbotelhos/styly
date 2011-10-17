@@ -198,15 +198,15 @@
 				}
 			}
 
-			var onclick		= this.attr('onclick'),
-				onchange	= this.attr('onchange');
+			var onclick		= this[0].onclick,
+				onchange	= this[0].onchange;
 
 			if (onclick) {
-				window.eval.call(this[0], onclick);
+				onclick.call(this[0]);
 			}
 
 			if (onchange) {
-				window.eval.call(this[0], onchange);
+				onchange.call(this[0]);
 			}
 		}, uncheckByName: function(checked) {
 			var name = this.attr('name');
