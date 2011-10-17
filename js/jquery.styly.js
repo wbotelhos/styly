@@ -88,14 +88,19 @@
 						methods.uncheckByName.call($this, checked);
 					}
 
-					if ($label.hasClass(hoverChecked)) {
+					if ($label.hasClass(checked)) {
 						if (!isRadio) {
-							$label.addClass(hover).removeClass(checked).removeClass(hoverChecked);
+							$label.removeClass(checked);
+							$this.removeAttr('checked');
+						}
+					} else if ($label.hasClass(hoverChecked)) {
+						if (!isRadio) {
+							$label.addClass(hover).removeClass(hoverChecked);
 							$this.removeAttr('checked');
 						}
 					} else {
 						if ($label.hasClass(hover)) {
-							$label.addClass(hoverChecked);
+							$label.removeClass(hover).addClass(hoverChecked);
 						} else {
 							$label.addClass(checked);
 						}
@@ -104,7 +109,28 @@
 					}
 
 					if (opt.trigger) {
-						$this.trigger('click').trigger('onchange');
+						var $events = $this.data('events');
+
+						if ($events) {
+							if ($events.click) {
+								$this.triggerHandler('click');
+							}
+	
+							if ($events.onchange) {
+								$this.triggerHandler('onchange');
+							}
+						}
+
+						var onclick		= $this.attr('onclick'),
+							onchange	= $this.attr('onchange');
+
+						if (onclick) {
+							window.eval.call($this[0], onclick);
+						}
+
+						if (onchange) {
+							window.eval.call($this[0], onchange);
+						}
 					}
 				});
 			});
@@ -143,10 +169,6 @@
 			}
 
 			return this;
-		}, debug: function(message) {
-			if (window.console && window.console.log) {
-				window.console.log(message);
-			}
 		}, enable: function(isEnable) {
 			var $label			= $('label[for="' + this.attr('id') + '"]'),
 				isRadio			= this.is(':radio'),
