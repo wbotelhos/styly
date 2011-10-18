@@ -528,6 +528,28 @@ describe('Styly', function() {
 			expect($input).not.toHaveAttr('checked', 'checked');
 		});
 
-	});
+		it('should not be hovered when it is checked disabled', function() {
+			// given
+			var $input = $('#like').styly(),
+				$label = $input.parent().children('label');
 
+			// when
+			$input.styly('enable', false);
+			$label.mouseover();
+
+			// then
+			expect($label).toHaveClass('check-styly');
+			expect($label).not.toHaveClass('check-hover');
+			expect($label).not.toHaveClass('check-checked');
+			expect($label).not.toHaveClass('check-hover-checked');
+			expect($label).toHaveClass('check-disabled');
+			expect($label).not.toHaveClass('check-disabled-checked');
+
+			expect($input).not.toBeChecked();
+			expect($input).not.toHaveAttr('checked', 'checked');
+		});
+
+	}); // checkbox end.
+
+	
 });
