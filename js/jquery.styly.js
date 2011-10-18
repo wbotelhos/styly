@@ -84,10 +84,6 @@
 						return false;
 					}
 
-					if (isRadio) {
-						methods.uncheckByName.call($this, checked);
-					}
-
 					if ($label.hasClass(checked)) {
 						if (!isRadio) {
 							$label.removeClass(checked);
@@ -99,6 +95,10 @@
 							$this.removeAttr('checked');
 						}
 					} else {
+						if (isRadio) {
+							methods.uncheckByName.call($this, checked);
+						}
+
 						if ($label.hasClass(hover)) {
 							$label.removeClass(hover).addClass(hoverChecked);
 						} else {
