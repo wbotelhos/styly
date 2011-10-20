@@ -114,7 +114,7 @@
 				});
 			});
 		}, check: function(isCheck, isTrigger) {
-			var $label			= $('label[for="' + this.attr('id') + '"]'),
+			var $label			= this.prev('label'),
 				isRadio			= this.is(':radio'),
 				prefix			= isRadio ? 'radio-' : 'check-',
 				hover			= prefix + 'hover',
@@ -149,7 +149,7 @@
 
 			return this;
 		}, enable: function(isEnable) {
-			var $label			= $('label[for="' + this.attr('id') + '"]'),
+			var $label			= this.prev('label'),
 				isRadio			= this.is(':radio'),
 				prefix			= isRadio ? 'radio-' : 'check-',
 				checked			= prefix + 'checked',
