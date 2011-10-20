@@ -54,62 +54,56 @@
 				$labelEach.hover(function() {
 					var $label = $(this);
 
-					if ($label.hasClass(disabled)) {
-						return false;
-					}
-
-					if ($label.hasClass(checked)) {
-						$label.addClass(hoverChecked).removeClass(checked);
-					} else {
-						$label.addClass(hover);
+					if (!$label.hasClass(disabled)) {
+						if ($label.hasClass(checked)) {
+							$label.addClass(hoverChecked).removeClass(checked);
+						} else {
+							$label.addClass(hover);
+						}
 					}
 				}, function() {
 					var $label = $(this);
 
-					if ($label.hasClass(disabled)) {
-						return false;
-					}
-
-					if ($label.hasClass(hoverChecked)) {
-						$label.addClass(checked).removeClass(hover).removeClass(hoverChecked);
-					} else {
-						$label.removeClass(hover);
+					if (!$label.hasClass(disabled)) {
+						if ($label.hasClass(hoverChecked)) {
+							$label.addClass(checked).removeClass(hover).removeClass(hoverChecked);
+						} else {
+							$label.removeClass(hover);
+						}
 					}
 				}).click(function(evt) {
 					evt.preventDefault();
 
 					var $label = $(this);
 
-					if ($label.hasClass(disabled)) {
-						return false;
-					}
-
-					if ($label.hasClass(checked)) {
-						if (!isRadio) {
-							$label.removeClass(checked);
-							$this.removeAttr('checked');
-						}
-					} else if ($label.hasClass(hoverChecked)) {
-						if (!isRadio) {
-							$label.addClass(hover).removeClass(hoverChecked);
-							$this.removeAttr('checked');
-						}
-					} else {
-						if (isRadio) {
-							methods.uncheckByName.call($this, checked);
-						}
-
-						if ($label.hasClass(hover)) {
-							$label.removeClass(hover).addClass(hoverChecked);
+					if (!$label.hasClass(disabled)) {
+						if ($label.hasClass(checked)) {
+							if (!isRadio) {
+								$label.removeClass(checked);
+								$this.removeAttr('checked');
+							}
+						} else if ($label.hasClass(hoverChecked)) {
+							if (!isRadio) {
+								$label.addClass(hover).removeClass(hoverChecked);
+								$this.removeAttr('checked');
+							}
 						} else {
-							$label.addClass(checked);
+							if (isRadio) {
+								methods.uncheckByName.call($this, checked);
+							}
+	
+							if ($label.hasClass(hover)) {
+								$label.removeClass(hover).addClass(hoverChecked);
+							} else {
+								$label.addClass(checked);
+							}
+	
+							$this.attr('checked', 'checked');
 						}
-
-						$this.attr('checked', 'checked');
-					}
-
-					if (opt.trigger) {
-						methods.triggerEvents.call($this);
+	
+						if (opt.trigger) {
+							methods.triggerEvents.call($this);
+						}
 					}
 				});
 			});
@@ -122,29 +116,27 @@
 				hoverChecked	= prefix + 'hover-checked',
 				disabled		= prefix + 'disabled';
 
-			if ($label.hasClass(disabled)) {
-				return false;
-			}
-
-			if (isCheck) {
-				if (isRadio) {
-					methods.uncheckByName.call(this, checked);
-				}
-
-				if ($label.hasClass(hover)) {
-					$label.addClass(hoverChecked);
+			if (!$label.hasClass(disabled)) {
+				if (isCheck) {
+					if (isRadio) {
+						methods.uncheckByName.call(this, checked);
+					}
+	
+					if ($label.hasClass(hover)) {
+						$label.addClass(hoverChecked);
+					} else {
+						$label.addClass(checked);
+					}
+	
+					this.attr('checked', 'checked');
 				} else {
-					$label.addClass(checked);
+					$label.removeClass(checked);
+					this.removeAttr('checked');
 				}
-
-				this.attr('checked', 'checked');
-			} else {
-				$label.removeClass(checked);
-				this.removeAttr('checked');
-			}
-
-			if (isTrigger === undefined || isTrigger) {
-				methods.triggerEvents.call(this);
+	
+				if (isTrigger === undefined || isTrigger) {
+					methods.triggerEvents.call(this);
+				}
 			}
 
 			return this;
