@@ -220,7 +220,6 @@
 	};
 
 	$.fn.styly.defaults = {
-		img:		'styly.gif',
 		path:		'../img',
 		trigger:	true
 	};

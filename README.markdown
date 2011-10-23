@@ -15,9 +15,15 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 	@twitter         twitter.com/wbotelhos
 	@package         jQuery Plugins
 
+## Required Files
+
++ jquery.styly.min.js
++ jquery.styly.css
++ check.png
++ radio.png
+
 ## Default values
 
-	img:     'styly.gif'                 // Name of the image.
 	path:     '../img'                   // Path of the image.
 	trigger:  true                       // Enables trigger the fuctions element like onchange.
 
