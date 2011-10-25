@@ -9,7 +9,7 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 ## Version
 
 	@version         0.1.0
-	@since           2011-10-15
+	@since           2011.10.15
 	@author          Washington Botelho dos Santos
 	@documentation   wbotelhos.com/styly
 	@twitter         twitter.com/wbotelhos
