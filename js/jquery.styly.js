@@ -6,7 +6,7 @@
  *
  * Licensed under The MIT License
  *
- * @version         0.1.0
+ * @version         0.2.0
  * @since           2011.10.15
  * @author          Washington Botelho dos Santos
  * @documentation   wbotelhos.com/styly
@@ -46,6 +46,7 @@
 					checked			= prefix + 'checked',
 					hoverChecked	= prefix + 'hover-checked',
 					disabled		= prefix + 'disabled',
+					disabledChecked	= prefix + 'disabled-checked',
 
 					$labelEach		= $('label[for="' + id + '"]').addClass(normal);
 
@@ -54,7 +55,7 @@
 				$labelEach.hover(function() {
 					var $label = $(this);
 
-					if (!$label.hasClass(disabled)) {
+					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
 						if ($label.hasClass(checked)) {
 							$label.addClass(hoverChecked).removeClass(checked);
 						} else {
@@ -64,7 +65,7 @@
 				}, function() {
 					var $label = $(this);
 
-					if (!$label.hasClass(disabled)) {
+					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
 						if ($label.hasClass(hoverChecked)) {
 							$label.addClass(checked).removeClass(hover).removeClass(hoverChecked);
 						} else {
@@ -76,7 +77,7 @@
 
 					var $label = $(this);
 
-					if (!$label.hasClass(disabled)) {
+					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
 						if ($label.hasClass(checked)) {
 							if (!isRadio) {
 								$label.removeClass(checked);
@@ -90,8 +91,10 @@
 						} else {
 							if (isRadio) {
 								methods.uncheckByName.call($this, checked);
+							} else if (opt.uncheckAll) {
+								methods.uncheckByClass.call($this, checked);
 							}
-	
+
 							if ($label.hasClass(hover)) {
 								$label.removeClass(hover).addClass(hoverChecked);
 							} else {
@@ -114,20 +117,27 @@
 				hover			= prefix + 'hover',
 				checked			= prefix + 'checked',
 				hoverChecked	= prefix + 'hover-checked',
-				disabled		= prefix + 'disabled';
+				disabled		= prefix + 'disabled',
+				disabledChecked = prefix + 'disabled-checked';
 
-			if (!$label.hasClass(disabled)) {
+			if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
 				if (isCheck) {
 					if (isRadio) {
 						methods.uncheckByName.call(this, checked);
+					} else {
+						var opt = this.data('options');
+
+						if (opt.uncheckAll) {
+							methods.uncheckByClass.call(this, checked);
+						}
 					}
-	
+
 					if ($label.hasClass(hover)) {
 						$label.addClass(hoverChecked);
 					} else {
 						$label.addClass(checked);
 					}
-	
+
 					this.attr('checked', 'checked');
 				} else {
 					$label.removeClass(checked);
@@ -167,8 +177,10 @@
 
 				this.attr('disabled', 'disabled');
 
-				if ($label.hasClass(checked) || $label.hasClass(hoverChecked)) {
-					$label.addClass(disabledChecked);
+				if ($label.hasClass(checked)) {
+					$label.removeClass(checked).addClass(disabledChecked);
+				} else if ($label.hasClass(hoverChecked)) {
+					$label.removeClass(hoverChecked).addClass(disabledChecked);
 				} else {
 					$label.addClass(disabled);
 				}
@@ -200,6 +212,16 @@
 			if (onchange) {
 				onchange.call(this[0]);
 			}
+		}, uncheckByClass: function(checked) {
+			var name = this.attr('class');
+
+			if (name.split(' ').length > 1) {
+				$.error('You must to use just one class when uncheckAll options is enabled! (' + name +')');
+			}
+
+			$('input.' + name).filter(':enabled').each(function() {
+				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(checked);
+			});
 		}, uncheckByName: function(checked) {
 			var name = this.attr('name');
 
@@ -221,7 +243,8 @@
 
 	$.fn.styly.defaults = {
 		path:		'../img',
-		trigger:	true
+		trigger:	true,
+		uncheckAll:	false
 	};
 
 })(jQuery);
