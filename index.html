@@ -102,45 +102,88 @@
 			<div id="checkbox-default-demo" class="session-first">With default options using checkbox:</div>
 
 			<label for="like">Like?</label>
-			<input id="like" type="checkbox" />
+			<input id="like" type="checkbox" class="checkbox" />
+
+			<label for="dislike">Dislike?</label>
+			<input id="dislike" type="checkbox" class="checkbox" />
 
 			<div style="color: #CCC; margin-top: 5px;">
-				<a id="check-like" href="javascript:void(0);">Check</a> |
-				<a id="uncheck-like" href="javascript:void(0);">Uncheck</a> |
-				<a id="enable-like" href="javascript:void(0);">Enable</a> |
-				<a id="disable-like" href="javascript:void(0);">Disable</a>
+				<a id="check-like" href="javascript:void(0);">Check (Like)</a> |
+				<a id="uncheck-like" href="javascript:void(0);">Uncheck (Like)</a> |
+				<a id="enable-like" href="javascript:void(0);">Enable (Like)</a> |
+				<a id="disable-like" href="javascript:void(0);">Disable (Like)</a> |
+				<a id="check-dislike" href="javascript:void(0);">Check (Dislike)</a> |
+				<a id="uncheck-dislike" href="javascript:void(0);">Uncheck (Dislike)</a> |
+				<a id="enable-dislike" href="javascript:void(0);">Enable (Dislike)</a> |
+				<a id="disable-dislike" href="javascript:void(0);">Disable (Dislike)</a>
 			</div>
 
 			<div class="source">
-				$('#like').styly();<br/><br/>
+				$('.checkbox').styly();<br/><br/>
 
 				&lt;label for="like"&gt;Like?&lt;/label&gt;<br/>
-				&lt;input id="like" type="checkbox" /&gt;
+				&lt;input id="like" type="checkbox" class="checkbox" /&gt;<br/><br/>
+
+				&lt;label for="dislike"&gt;Dislike?&lt;/label&gt;<br/>
+				&lt;input id="dislike" type="checkbox" class="checkbox" /&gt;
 			</div>
 
 			<div id="radio-default-demo" class="session">With default options using radio:</div>
 
 			<label for="agree">Agree</label>
-			<input id="agree" type="radio" name="agreement" class="styly"/>
+			<input id="agree" type="radio" name="agreement" class="radio"/>
 
-			<label for="desagree">Desagree</label>
-			<input id="desagree" type="radio" name="agreement" class="styly"/>
+			<label for="disagree">Disagree</label>
+			<input id="disagree" type="radio" name="agreement" class="radio"/>
 
 			<div style="color: #CCC; margin-top: 5px;">
-				<a id="check-agree" href="javascript:void(0);">Check</a> |
-				<a id="uncheck-agree" href="javascript:void(0);">Uncheck</a> |
-				<a id="enable-agree" href="javascript:void(0);">Enable</a> |
-				<a id="disable-agree" href="javascript:void(0);">Disable</a>
+				<a id="check-agree" href="javascript:void(0);">Check (Agree)</a> |
+				<a id="uncheck-agree" href="javascript:void(0);">Uncheck (Agree)</a> |
+				<a id="enable-agree" href="javascript:void(0);">Enable (Agree)</a> |
+				<a id="disable-agree" href="javascript:void(0);">Disable (Agree)</a> |
+				<a id="check-disagree" href="javascript:void(0);">Check (Disagree)</a> |
+				<a id="uncheck-disagree" href="javascript:void(0);">Uncheck (Disagree)</a> |
+				<a id="enable-disagree" href="javascript:void(0);">Enable (Disagree)</a> |
+				<a id="disable-disagree" href="javascript:void(0);">Disable (Dislike)</a>
 			</div>
 
 			<div class="source">
-				$('.styly').styly();<br/><br/>
+				$('.radio').styly();<br/><br/>
 
 				&lt;label for="agree"&gt;Like&lt;/label&gt;<br/>
-				&lt;input id="agree" type="radio" name="agreement" class="styly"/&gt;<br/><br/>
+				&lt;input id="agree" type="radio" name="agreement" class="radio"/&gt;<br/><br/>
 
-				&lt;label for="desagree"&gt;Unlike&lt;/label&gt;<br/>
-				&lt;input id="desagree" type="radio" name="agreement" class="styly"/&gt;
+				&lt;label for="disagree"&gt;Unlike&lt;/label&gt;<br/>
+				&lt;input id="disagree" type="radio" name="agreement" class="radio"/&gt;
+			</div>
+
+			<div id="uncheckall-default-demo" class="session">Unchecking all before check someone:</div>
+
+			<label for="digg">Digg?</label>
+			<input id="digg" type="checkbox" class="uncheckall" />
+
+			<label for="undigg">Undigg?</label>
+			<input id="undigg" type="checkbox" class="uncheckall" />
+
+			<div style="color: #CCC; margin-top: 5px;">
+				<a id="check-digg" href="javascript:void(0);">Check (Digg)</a> |
+				<a id="uncheck-digg" href="javascript:void(0);">Uncheck (Digg)</a> |
+				<a id="enable-digg" href="javascript:void(0);">Enable (Digg)</a> |
+				<a id="disable-digg" href="javascript:void(0);">Disable (Digg)</a> |
+				<a id="check-undigg" href="javascript:void(0);">Check (Undigg)</a> |
+				<a id="uncheck-undigg" href="javascript:void(0);">Uncheck (Undigg)</a> |
+				<a id="enable-undigg" href="javascript:void(0);">Enable (Undigg)</a> |
+				<a id="disable-undigg" href="javascript:void(0);">Disable (Undigg)</a>
+			</div>
+
+			<div class="source">
+				$('.digg').styly();<br/><br/>
+
+				&lt;label for="digg"&gt;Digg?&lt;/label&gt;<br/>
+				&lt;input id="digg" type="checkbox" class="uncheckall" /&gt;<br/><br/>
+
+				&lt;label for="undigg"&gt;Undigg?&lt;/label&gt;<br/>
+				&lt;input id="undigg" type="checkbox" class="uncheckall" /&gt;
 			</div>
 
 			<div class="session">Default options:</div>
@@ -154,6 +197,9 @@
 
 				trigger:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true
 				<div class="comment">Enables trigger the fuctions element like onchange.</div>
+
+				uncheckAll:&nbsp;&nbsp;&nbsp;false
+				<div class="comment">Uncheck all checkbox with the same class before an especific check.</div>
 			</div>
 
 			<div class="session">Public functions:</div>
@@ -172,41 +218,41 @@
 		<script type="text/javascript">
 			$(function() {
 
-				$('#like').styly();
+				$('.checkbox').styly();
 
-				$('.styly').styly();
+				$('.radio').styly();
 
-				$('#check-like').click(function() {
-					$('#like').styly('check', true);
-				});
+				$('.uncheckall').styly({ uncheckAll: true });
 
-				$('#uncheck-like').click(function() {
-					$('#like').styly('check', false);
-				});
+				$('#check-like').click(function() { $('#like').styly('check', true); });
+				$('#uncheck-like').click(function() { $('#like').styly('check', false); });
+				$('#enable-like').click(function() { $('#like').styly('enable', true); });
+				$('#disable-like').click(function() { $('#like').styly('enable', false); });
 
-				$('#enable-like').click(function() {
-					$('#like').styly('enable', true);
-				});
+				$('#check-dislike').click(function() { $('#dislike').styly('check', true); });
+				$('#uncheck-dislike').click(function() { $('#dislike').styly('check', false); });
+				$('#enable-dislike').click(function() { $('#dislike').styly('enable', true); });
+				$('#disable-dislike').click(function() { $('#dislike').styly('enable', false); });
 
-				$('#disable-like').click(function() {
-					$('#like').styly('enable', false);
-				});
+				$('#check-agree').click(function() { $('#agree').styly('check', true); });
+				$('#uncheck-agree').click(function() { $('#agree').styly('check', false); });
+				$('#enable-agree').click(function() { $('#agree').styly('enable', true); });
+				$('#disable-agree').click(function() { $('#agree').styly('enable', false); });
 
-				$('#check-agree').click(function() {
-					$('#agree').styly('check', true);
-				});
+				$('#check-disagree').click(function() { $('#disagree').styly('check', true); });
+				$('#uncheck-disagree').click(function() { $('#disagree').styly('check', false); });
+				$('#enable-disagree').click(function() { $('#disagree').styly('enable', true); });
+				$('#disable-disagree').click(function() { $('#disagree').styly('enable', false); });
 
-				$('#uncheck-agree').click(function() {
-					$('.styly').styly('check', false);
-				});
+				$('#check-digg').click(function() { $('#digg').styly('check', true); });
+				$('#uncheck-digg').click(function() { $('#digg').styly('check', false); });
+				$('#enable-digg').click(function() { $('#digg').styly('enable', true); });
+				$('#disable-digg').click(function() { $('#digg').styly('enable', false); });
 
-				$('#enable-agree').click(function() {
-					$('.styly').styly('enable', true);
-				});
-
-				$('#disable-agree').click(function() {
-					$('.styly').styly('enable', false);
-				});
+				$('#check-undigg').click(function() { $('#undigg').styly('check', true); });
+				$('#uncheck-undigg').click(function() { $('#undigg').styly('check', false); });
+				$('#enable-undigg').click(function() { $('#undigg').styly('enable', true); });
+				$('#disable-undigg').click(function() { $('#undigg').styly('enable', false); });
 
 			});
 		</script>

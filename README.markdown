@@ -8,7 +8,7 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Version
 
-	@version         0.1.0
+	@version         0.2.0
 	@since           2011.10.15
 	@author          Washington Botelho dos Santos
 	@documentation   wbotelhos.com/styly
@@ -24,8 +24,9 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Default values
 
-	path:     '../img'                   // Path of the image.
-	trigger:  true                       // Enables trigger the fuctions element like onchange.
+	path:        '../img'             // Path of the image.
+	trigger:     true                 // Enables trigger the fuctions element like onchange.
+	uncheckAll:  false                // Uncheck all checkbox with the same class before an especific check.
 
 ## Usage with default values
 
