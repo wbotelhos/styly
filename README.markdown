@@ -24,7 +24,6 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Default values
 
-	path:        '../img'             // Path of the image.
 	trigger:     true                 // Enables trigger the fuctions element like onchange.
 	uncheckAll:  false                // Uncheck all checkbox with the same class before an especific check.
 

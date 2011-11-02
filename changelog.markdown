@@ -1,0 +1,13 @@
+# jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
+
+### 0.2.0
+
++ Added attribute 'uncheckAll' to uncheck all checkbox with the same class before an especific check;
++ Fixed some little bugs.
+
+### 0.1.0
+
++ You can style checkbox elements;
++ You can style radio elements;
++ Function 'enable' to enable or disable the elements;
++ Function 'check' to check or uncheck the elements.

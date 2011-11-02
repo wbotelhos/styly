@@ -8,7 +8,7 @@
  *
  * @version         0.2.0
  * @since           2011.10.15
- * @author          Washington Botelho dos Santos
+ * @author          Washington Botelho
  * @documentation   wbotelhos.com/styly
  * @twitter         twitter.com/wbotelhos
  * @license         opensource.org/licenses/mit-license.php
@@ -242,7 +242,6 @@
 	};
 
 	$.fn.styly.defaults = {
-		path:		'../img',
 		trigger:	true,
 		uncheckAll:	false
 	};
