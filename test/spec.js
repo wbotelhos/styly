@@ -1497,3 +1497,203 @@ describe('Using radio', function() {
 	});
 
 }); // USING RADIO
+
+describe('Using checkbox and radio', function() {
+
+	beforeEach(function() {
+		$('body')
+		.append('<label for="like">Like?</label><input id="like" type="checkbox" class="checkbox styly" />')
+		.append('<label for="dislike">Dislike?</label><input id="dislike" type="checkbox" class="checkbox styly" />')
+		.append('<label for="agree">Agree</label><input id="agree" type="radio" name="agreement" class="radio styly"/>')
+		.append('<label for="desagree">Desagree</label><input id="desagree" type="radio" name="agreement" class="radio styly"/>');
+	});
+
+	afterEach(function() {
+		$('.styly').parent().remove();
+	});
+
+	it('should checked with right class', function() {
+		// given
+		var $inputs	= $('.styly').styly(),
+			$labels = $inputs.parent().children('label');
+
+		// when
+		$inputs.styly('check', true);
+
+		// then
+		expect($labels.eq(0)).toHaveClass('check-styly');
+		expect($labels.eq(0)).not.toHaveClass('check-hover');
+		expect($labels.eq(0)).toHaveClass('check-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(0)).toBeChecked();
+		expect($inputs.eq(0)).not.toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('check-styly');
+		expect($labels.eq(1)).not.toHaveClass('check-hover');
+		expect($labels.eq(1)).toHaveClass('check-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(1)).toBeChecked();
+		expect($inputs.eq(1)).not.toBeDisabled();
+
+		expect($labels.eq(2)).toHaveClass('radio-styly');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover');
+		expect($labels.eq(2)).not.toHaveClass('radio-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(2)).not.toBeChecked();
+		expect($inputs.eq(2)).not.toBeDisabled();
+
+		expect($labels.eq(3)).toHaveClass('radio-styly');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover');
+		expect($labels.eq(3)).toHaveClass('radio-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(3)).toBeChecked();
+		expect($inputs.eq(3)).not.toBeDisabled();
+	});
+
+	it('should unchecked with right class', function() {
+		// given
+		var $inputs	= $('.styly').styly(),
+			$labels = $inputs.parent().children('label');
+
+		// when
+		$inputs.styly('check', true).styly('check', false);
+
+		// then
+		expect($labels.eq(0)).toHaveClass('check-styly');
+		expect($labels.eq(0)).not.toHaveClass('check-hover');
+		expect($labels.eq(0)).not.toHaveClass('check-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(0)).not.toBeChecked();
+		expect($inputs.eq(0)).not.toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('check-styly');
+		expect($labels.eq(1)).not.toHaveClass('check-hover');
+		expect($labels.eq(1)).not.toHaveClass('check-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(1)).not.toBeChecked();
+		expect($inputs.eq(1)).not.toBeDisabled();
+
+		expect($labels.eq(2)).toHaveClass('radio-styly');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover');
+		expect($labels.eq(2)).not.toHaveClass('radio-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(2)).not.toBeChecked();
+		expect($inputs.eq(2)).not.toBeDisabled();
+
+		expect($labels.eq(3)).toHaveClass('radio-styly');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover');
+		expect($labels.eq(3)).not.toHaveClass('radio-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(3)).not.toBeChecked();
+		expect($inputs.eq(3)).not.toBeDisabled();
+	});
+
+	it('should disable with right class', function() {
+		// given
+		var $inputs	= $('.styly').styly(),
+			$labels = $inputs.parent().children('label');
+
+		// when
+		$inputs.styly('enable', false);
+
+		// then
+		expect($labels.eq(0)).toHaveClass('check-styly');
+		expect($labels.eq(0)).not.toHaveClass('check-hover');
+		expect($labels.eq(0)).not.toHaveClass('check-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(0)).toHaveClass('check-disabled');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(0)).not.toBeChecked();
+		expect($inputs.eq(0)).toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('check-styly');
+		expect($labels.eq(1)).not.toHaveClass('check-hover');
+		expect($labels.eq(1)).not.toHaveClass('check-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(1)).toHaveClass('check-disabled');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(1)).not.toBeChecked();
+		expect($inputs.eq(1)).toBeDisabled();
+
+		expect($labels.eq(2)).toHaveClass('radio-styly');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover');
+		expect($labels.eq(2)).not.toHaveClass('radio-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(2)).toHaveClass('radio-disabled');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(2)).not.toBeChecked();
+		expect($inputs.eq(2)).toBeDisabled();
+
+		expect($labels.eq(3)).toHaveClass('radio-styly');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover');
+		expect($labels.eq(3)).not.toHaveClass('radio-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(3)).toHaveClass('radio-disabled');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(3)).not.toBeChecked();
+		expect($inputs.eq(3)).toBeDisabled();
+	});
+
+	it('should enable with right class', function() {
+		// given
+		var $inputs	= $('.styly').styly(),
+		$labels = $inputs.parent().children('label');
+		
+		// when
+		$inputs.styly('enable', false).styly('enable', true);
+		
+		// then
+		expect($labels.eq(0)).toHaveClass('check-styly');
+		expect($labels.eq(0)).not.toHaveClass('check-hover');
+		expect($labels.eq(0)).not.toHaveClass('check-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(0)).not.toBeChecked();
+		expect($inputs.eq(0)).not.toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('check-styly');
+		expect($labels.eq(1)).not.toHaveClass('check-hover');
+		expect($labels.eq(1)).not.toHaveClass('check-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(1)).not.toBeChecked();
+		expect($inputs.eq(1)).not.toBeDisabled();
+
+		expect($labels.eq(2)).toHaveClass('radio-styly');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover');
+		expect($labels.eq(2)).not.toHaveClass('radio-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(2)).not.toBeChecked();
+		expect($inputs.eq(2)).not.toBeDisabled();
+
+		expect($labels.eq(3)).toHaveClass('radio-styly');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover');
+		expect($labels.eq(3)).not.toHaveClass('radio-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(3)).not.toBeChecked();
+		expect($inputs.eq(3)).not.toBeDisabled();
+	});
+
+}); // USING CHECKBOX AND RADIO
