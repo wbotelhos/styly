@@ -1,5 +1,9 @@
 # jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
 
+### 0.2.1
+
++ Fixed bug on functions who used the type of the first element and applied on the following.
+
 ### 0.2.0
 
 + Added attribute 'uncheckAll' to uncheck all checkbox with the same class before an especific check;

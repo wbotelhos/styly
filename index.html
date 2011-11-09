@@ -78,11 +78,11 @@
 		<div id="header">
 			<div id="title">
 				<a href="http://wbotelhos.com/styly">jQuery Styly - A Stylish Plugin</a>
-				<span>(current version: 0.2.0)</span>
+				<span>(current version: 0.2.1)</span>
 			</div>
 	
 			<div id="menu">
-				<a href="http://github.com/downloads/wbotelhos/styly/jquery.styly-0.2.0.zip" target="_blank">Download</a> |
+				<a href="http://github.com/downloads/wbotelhos/styly/jquery.styly-0.2.1.zip" target="_blank">Download</a> |
 				<a href="http://github.com/wbotelhos/styly" target="_blank">Github</a> |
 				<a href="http://wbotelhos.com/styly/changelog.markdown" target="_blank">Change Log</a> |
 				<a href="http://wbotelhos.com/styly/README.markdown" target="_blank">Readme</a> |
@@ -203,6 +203,11 @@
 
 			<div class="source">$('#like').styly('enable', true);</div>
 			<div class="description-code">Enables or disables an element. You can use class selector '.styly'.</div>
+
+			<a id="check-all" href="javascript:void(0);">Check All</a> |
+			<a id="uncheck-all" href="javascript:void(0);">Uncheck All</a> |
+			<a id="enable-all" href="javascript:void(0);">Enable All</a> |
+			<a id="disable-all" href="javascript:void(0);">Disable All</a>
 		</div>
 
 		<div id="footer">
@@ -247,6 +252,13 @@
 				$('#uncheck-undigg').click(function() { $('#undigg').styly('check', false); });
 				$('#enable-undigg').click(function() { $('#undigg').styly('enable', true); });
 				$('#disable-undigg').click(function() { $('#undigg').styly('enable', false); });
+
+				var $allCheckAndRadio = $('input[type="checkbox"], input[type="radio"]');
+
+				$('#check-all').click(function() { $allCheckAndRadio.styly('check', true); });
+				$('#uncheck-all').click(function() { $allCheckAndRadio.styly('check', false); });
+				$('#enable-all').click(function() { $allCheckAndRadio.styly('enable', true); });
+				$('#disable-all').click(function() { $allCheckAndRadio.styly('enable', false); });
 
 			});
 		</script>

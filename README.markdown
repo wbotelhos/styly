@@ -8,12 +8,11 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 ## Version
 
-	@version         0.2.0
-	@since           2011.10.15
-	@author          Washington Botelho dos Santos
-	@documentation   wbotelhos.com/styly
-	@twitter         twitter.com/wbotelhos
-	@package         jQuery Plugins
+	@version        0.2.1
+	@since          2011.10.15
+	@author         Washington Botelho dos Santos
+	@documentation  wbotelhos.com/styly
+	@twitter        twitter.com/wbotelhos
 
 ## Required Files
 
@@ -37,10 +36,10 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 ## Public functions
 
 	$('#like').styly('check', true, false);
-	Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.
+	// Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.
 
 	$('#like').styly('enable', true);
-	Enables or disables an element. You can use class selector '.styly'.
+	// Enables or disables an element. You can use class selector '.styly'.
 
 ## Buy me a coffee
 

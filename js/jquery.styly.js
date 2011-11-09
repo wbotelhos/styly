@@ -1,21 +1,20 @@
 /*!
  * jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
- * ---------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------
  *
  * jQuery Styly is a plugin to style your checkbox and radio elements.
  *
  * Licensed under The MIT License
  *
- * @version         0.2.0
- * @since           2011.10.15
- * @author          Washington Botelho
- * @documentation   wbotelhos.com/styly
- * @twitter         twitter.com/wbotelhos
- * @license         opensource.org/licenses/mit-license.php
- * @package         jQuery Plugins
+ * @version        0.2.1
+ * @since          2011.10.15
+ * @author         Washington Botelho
+ * @documentation  wbotelhos.com/styly
+ * @twitter        twitter.com/wbotelhos
+ * @license        opensource.org/licenses/mit-license.php
  *
  * Usage with default values:
- * ---------------------------------------------------------------------------------
+ * ------------------------------------------------------------------------
  * $('#like').styly();
  *
  * <label for="like">Like?</label>
