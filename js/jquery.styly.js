@@ -111,84 +111,90 @@
 				});
 			});
 		}, check: function(isCheck, isTrigger) {
-			var $label			= this.prev('label'),
-				isRadio			= this.is(':radio'),
-				prefix			= isRadio ? 'radio-' : 'check-',
-				hover			= prefix + 'hover',
-				checked			= prefix + 'checked',
-				hoverChecked	= prefix + 'hover-checked',
-				disabled		= prefix + 'disabled',
-				disabledChecked = prefix + 'disabled-checked';
+			return this.each(function() {
 
-			if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
-				if (isCheck) {
-					if (isRadio) {
-						methods.uncheckByName.call(this, checked);
-					} else {
-						var opt = this.data('options');
+				var $this			= $(this),
+					$label			= $this.prev('label'),
+					isRadio			= $this.is(':radio'),
+					prefix			= isRadio ? 'radio-' : 'check-',
+					hover			= prefix + 'hover',
+					checked			= prefix + 'checked',
+					hoverChecked	= prefix + 'hover-checked',
+					disabled		= prefix + 'disabled',
+					disabledChecked = prefix + 'disabled-checked';
 
-						if (opt.uncheckAll) {
-							methods.uncheckByClass.call(this, checked);
-						}
-					}
-
-					if ($label.hasClass(hover)) {
-						$label.addClass(hoverChecked);
-					} else {
-						$label.addClass(checked);
-					}
-
-					this.attr('checked', 'checked');
-				} else {
-					$label.removeClass(checked);
-					this.removeAttr('checked');
-				}
+				if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
+					if (isCheck) {
+						if (isRadio) {
+							methods.uncheckByName.call($this, checked);
+						} else {
+							var opt = $this.data('options');
 	
-				if (isTrigger === undefined || isTrigger) {
-					methods.triggerEvents.call(this);
+							if (opt.uncheckAll) {
+								methods.uncheckByClass.call($this, checked);
+							}
+						}
+	
+						if ($label.hasClass(hover)) {
+							$label.addClass(hoverChecked);
+						} else {
+							$label.addClass(checked);
+						}
+	
+						$this.attr('checked', 'checked');
+					} else {
+						$label.removeClass(checked);
+						$this.removeAttr('checked');
+					}
+		
+					if (isTrigger === undefined || isTrigger) {
+						methods.triggerEvents.call($this);
+					}
 				}
-			}
 
-			return this;
+			});
 		}, enable: function(isEnable) {
-			var $label			= this.prev('label'),
-				isRadio			= this.is(':radio'),
-				prefix			= isRadio ? 'radio-' : 'check-',
-				checked			= prefix + 'checked',
-				hoverChecked	= prefix + 'hover-checked',
-				disabled		= prefix + 'disabled',
-				disabledChecked	= prefix + 'disabled-checked';
+			return this.each(function() {
 
-			if (isEnable) {
-				this.removeAttr('disabled');
-
-				$label.removeClass(disabled);
-
-				if ($label.hasClass(disabledChecked)) {
-					$label.addClass(checked).removeClass(disabledChecked);
-				}
-
-				$label.css('opacity', '1');
-			} else {
-				if (isRadio) {
-					$label.removeClass(checked);
-					this.removeAttr('checked');					
-				}
-
-				this.attr('disabled', 'disabled');
-
-				if ($label.hasClass(checked)) {
-					$label.removeClass(checked).addClass(disabledChecked);
-				} else if ($label.hasClass(hoverChecked)) {
-					$label.removeClass(hoverChecked).addClass(disabledChecked);
+				var $this			= $(this),
+					$label			= $this.prev('label'),
+					isRadio			= $this.is(':radio'),
+					prefix			= isRadio ? 'radio-' : 'check-',
+					checked			= prefix + 'checked',
+					hoverChecked	= prefix + 'hover-checked',
+					disabled		= prefix + 'disabled',
+					disabledChecked	= prefix + 'disabled-checked';
+	
+				if (isEnable) {
+					$this.removeAttr('disabled');
+	
+					$label.removeClass(disabled);
+	
+					if ($label.hasClass(disabledChecked)) {
+						$label.addClass(checked).removeClass(disabledChecked);
+					}
+	
+					$label.css('opacity', '1');
 				} else {
-					$label.addClass(disabled);
+					if (isRadio) {
+						$label.removeClass(checked);
+						$this.removeAttr('checked');					
+					}
+	
+					$this.attr('disabled', 'disabled');
+	
+					if ($label.hasClass(checked)) {
+						$label.removeClass(checked).addClass(disabledChecked);
+					} else if ($label.hasClass(hoverChecked)) {
+						$label.removeClass(hoverChecked).addClass(disabledChecked);
+					} else {
+						$label.addClass(disabled);
+					}
+	
+					$label.css('opacity', '.6');
 				}
 
-				$label.css('opacity', '.6');
-			}
-
-			return this;
+			});
 		}, triggerEvents: function() {
 			var $events = this.data('events');
 
