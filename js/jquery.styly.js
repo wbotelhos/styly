@@ -1,20 +1,19 @@
 /*!
  * jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
- * ------------------------------------------------------------------------
+ * -------------------------------------------------------------------
  *
  * jQuery Styly is a plugin to style your checkbox and radio elements.
  *
  * Licensed under The MIT License
  *
- * @version        0.2.1
+ * @version        0.2.2
  * @since          2011.10.15
  * @author         Washington Botelho
  * @documentation  wbotelhos.com/styly
  * @twitter        twitter.com/wbotelhos
- * @license        opensource.org/licenses/mit-license.php
  *
  * Usage with default values:
- * ------------------------------------------------------------------------
+ * -------------------------------------------------------------------
  * $('#like').styly();
  *
  * <label for="like">Like?</label>
@@ -48,6 +47,14 @@
 					disabledChecked	= prefix + 'disabled-checked',
 
 					$labelEach		= $('label[for="' + id + '"]').addClass(normal);
+
+				if ($this.is(':checked') && $this.is(':hover')) {
+					$labelEach.addClass(hoverChecked);
+				} else if ($this.is(':checked')) {
+					$labelEach.addClass(checked);
+				} else if ($this.is(':hover')) {
+					$labelEach.addClass(hover);
+				}
 
 				$('<div class="styly-wrapper"/>').insertBefore($labelEach).append($labelEach, $this);
 

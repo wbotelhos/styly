@@ -10,7 +10,7 @@ describe('Using checkbox', function() {
 		$('.checkbox').parent().remove();
 	});
 
-	it('should chainable', function() {
+	it ('should chainable', function() {
 		// given
 		var $inputs		= $('.checkbox'),
 			className	= 'my-class';
@@ -23,7 +23,7 @@ describe('Using checkbox', function() {
 	    expect($inputs.eq(1)).toHaveClass(className);
 	});
 
-	it('should wrapped', function() {
+	it ('should wrapped', function() {
 		// given
 		var	$inputs = $('.checkbox');
 
@@ -40,7 +40,7 @@ describe('Using checkbox', function() {
 	    expect($wrappers.eq(1)).toHaveClass('styly-wrapper');
 	});
 
-	it('should normal', function() {
+	it ('should normal', function() {
 		// given
 		var $inputs = $('.checkbox');
 
@@ -69,7 +69,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should have the field hide', function() {
+	it ('should have the field hide', function() {
 		// given
 		var $inputs = $('.checkbox');
 
@@ -81,7 +81,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).toBeHidden();
 	});
 
-	it('should hovered', function() {
+	it ('should hovered', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -109,7 +109,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should checked', function() {
+	it ('should checked', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -137,7 +137,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should checked -> normal', function() {
+	it ('should checked -> normal', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -165,7 +165,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should hovered -> hovered checked', function() {
+	it ('should hovered -> hovered checked', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -193,7 +193,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should hovered -> hovered checked -> hovered', function() {
+	it ('should hovered -> hovered checked -> hovered', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -221,7 +221,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should trigger inline onclick', function() {
+	it ('should trigger inline onclick', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -238,7 +238,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should trigger inline onchange', function() {
+	it ('should trigger inline onchange', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -255,7 +255,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should trigger binded onclick', function() {
+	it ('should trigger binded onclick', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.parent().children('label');
@@ -272,7 +272,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should trigger binded onchange', function() {
+	it ('should trigger binded onchange', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -289,7 +289,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should disable all checkboxs', function() {
+	it ('should disable all checkboxs', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.prev('label');
@@ -317,7 +317,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).toBeDisabled();
 	});
 
-	it('should function disable', function() {
+	it ('should function disable', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.prev('label');
@@ -345,7 +345,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).toBeDisabled();
 	});
 
-	it('should function disable -> enable', function() {
+	it ('should function disable -> enable', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.prev('label');
@@ -373,7 +373,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should chainable function check', function() {
+	it ('should chainable function check', function() {
 		// given
 		var $inputs		= $('.checkbox').styly(),
 			className	= 'my-class';
@@ -385,7 +385,7 @@ describe('Using checkbox', function() {
 	    expect($inputs.eq(0)).toHaveClass(className);
 	});
 
-	it('should function check', function() {
+	it ('should function check', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -404,7 +404,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).not.toBeDisabled();
 	});
 
-	it('should function check -> check', function() {
+	it ('should function check -> check', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -423,7 +423,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).not.toBeDisabled();
 	});
 
-	it('should function check -> uncheck', function() {
+	it ('should function check -> uncheck', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -441,7 +441,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).not.toBeChecked();
 	});
 
-	it('should function check -> disable', function() {
+	it ('should function check -> disable', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).prev('label');
@@ -460,7 +460,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should function trigger inline onclick on check', function() {
+	it ('should function trigger inline onclick on check', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -476,7 +476,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onclick on uncheck', function() {
+	it ('should function trigger inline onclick on uncheck', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -492,7 +492,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onchange on check', function() {
+	it ('should function trigger inline onchange on check', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -508,7 +508,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onchange on uncheck', function() {
+	it ('should function trigger inline onchange on uncheck', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -524,7 +524,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onclick on check', function() {
+	it ('should function trigger binded onclick on check', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -540,7 +540,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onclick on uncheck', function() {
+	it ('should function trigger binded onclick on uncheck', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -556,7 +556,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onchange on check', function() {
+	it ('should function trigger binded onchange on check', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -572,7 +572,7 @@ describe('Using checkbox', function() {
 		expect('change').toHaveBeenTriggeredOn($inputs.eq(0));
 	});
 
-	it('should function trigger binded onchange on uncheck', function() {
+	it ('should function trigger binded onchange on uncheck', function() {
 		// given
 		var $inputs = $('.checkbox').styly();
 
@@ -588,7 +588,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toHaveClass('my-class');
 	});
 
-	it('should function not check when disabled', function() {
+	it ('should function not check when disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -608,7 +608,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not uncheck when checked disabled', function() {
+	it ('should not uncheck when checked disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -629,7 +629,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not hover when disabled', function() {
+	it ('should not hover when disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -649,7 +649,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not hover when checked disabled', function() {
+	it ('should not hover when checked disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly(),
 			$labels = $inputs.eq(0).parent().children('label');
@@ -670,7 +670,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should uncheck all before check someone', function() {
+	it ('should uncheck all before check someone', function() {
 		// given
 		var $inputs = $('.checkbox').styly({ uncheckAll: true }),
 			$labels = $inputs.prev('label');
@@ -699,7 +699,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should keep disabled when uncheck all on disabled', function() {
+	it ('should keep disabled when uncheck all on disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly({ uncheckAll: true }),
 			$labels = $inputs.prev('label');
@@ -728,7 +728,7 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should keep checked disabled when uncheck all on checked disabled', function() {
+	it ('should keep checked disabled when uncheck all on checked disabled', function() {
 		// given
 		var $inputs = $('.checkbox').styly({ uncheckAll: true }),
 			$labels = $inputs.prev('label');
@@ -758,63 +758,36 @@ describe('Using checkbox', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-//it('should uncheck all before check someone using function', function() {
-//	// given
-//	var $inputs = $('.radio').styly({ uncheckAll: true }),
-//		$labels = $inputs.prev('label');
-//
-//	// when
-//	$inputs.eq(0).styly('check', true);
-//	$inputs.eq(1).styly('check', true);
-//
-//	// then
-//	expect($labels.eq(0)).toHaveClass('check-styly');
-//	expect($labels.eq(0)).not.toHaveClass('check-hover');
-//	expect($labels.eq(0)).not.toHaveClass('check-checked');
-//	expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
-//	expect($labels.eq(0)).not.toHaveClass('check-disabled');
-//	expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
-//	expect($inputs.eq(0)).not.toBeChecked();
-//
-//	expect($labels.eq(1)).toHaveClass('check-styly');
-//	expect($labels.eq(1)).not.toHaveClass('check-hover');
-//	expect($labels.eq(1)).toHaveClass('check-checked');
-//	expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
-//	expect($labels.eq(1)).not.toHaveClass('check-disabled');
-//	expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
-//	expect($inputs.eq(1)).toBeChecked();
-//	expect($inputs.eq(1)).not.toBeDisabled();
-//});
-//
-//it('should uncheck all before check someone using function even it is disabled', function() {
-//	// given
-//	var $inputs = $('.radio').styly({ uncheckAll: true }),
-//		$labels = $inputs.prev('label');
-//
-//	// when
-//	$inputs.eq(0).styly('check', true).styly('enable', false);
-//	$inputs.eq(1).styly('check', true);
-//
-//	// then
-//	expect($labels.eq(0)).toHaveClass('check-styly');
-//	expect($labels.eq(0)).not.toHaveClass('check-hover');
-//	expect($labels.eq(0)).not.toHaveClass('check-checked');
-//	expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
-//	expect($labels.eq(0)).not.toHaveClass('check-disabled');
-//	expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
-//	expect($inputs.eq(0)).not.toBeChecked();
-//
-//	expect($labels.eq(1)).toHaveClass('check-styly');
-//	expect($labels.eq(1)).not.toHaveClass('check-hover');
-//	expect($labels.eq(1)).toHaveClass('check-checked');
-//	expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
-//	expect($labels.eq(1)).not.toHaveClass('check-disabled');
-//	expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
-//	expect($inputs.eq(1)).toBeChecked();
-//	expect($inputs.eq(1)).not.toBeDisabled();
-//});
+	it ('should starts checked', function() {
+		// given
+		var $inputs = $('.checkbox'),
+			$labels = $inputs.prev('label');
 
-}); // USING CHECKBOX 
+		// when
+		$inputs.eq(0).click();
+		$inputs.styly();
+
+		// then
+		expect($labels.eq(0)).toHaveClass('check-styly');
+		expect($labels.eq(0)).not.toHaveClass('check-hover');
+		expect($labels.eq(0)).toHaveClass('check-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled');
+		expect($labels.eq(0)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(0)).toBeChecked();
+		expect($inputs.eq(0)).not.toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('check-styly');
+		expect($labels.eq(1)).not.toHaveClass('check-hover');
+		expect($labels.eq(1)).not.toHaveClass('check-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-hover-checked');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled');
+		expect($labels.eq(1)).not.toHaveClass('check-disabled-checked');
+		expect($inputs.eq(1)).not.toBeChecked();
+		expect($inputs.eq(1)).not.toBeDisabled();
+	});
+
+}); 
 
 describe('Using radio', function() {
 
@@ -828,7 +801,7 @@ describe('Using radio', function() {
 		$('.radio').parent().remove();
 	});
 
-	it('should chainable', function() {
+	it ('should chainable', function() {
 		// given
 		var $inputs		= $('.radio'),
 			className	= 'my-class';
@@ -841,7 +814,7 @@ describe('Using radio', function() {
 	    expect($inputs.eq(1)).toHaveClass(className);
 	});
 
-	it('should wrapped', function() {
+	it ('should wrapped', function() {
 		// given
 		var	$inputs = $('.radio');
 
@@ -858,7 +831,7 @@ describe('Using radio', function() {
 	    expect($wrappers.eq(1)).toHaveClass('styly-wrapper');
 	});
 
-	it('should normal', function() {
+	it ('should normal', function() {
 		// given
 		var $inputs = $('.radio');
 
@@ -887,7 +860,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should have the field hide', function() {
+	it ('should have the field hide', function() {
 		// given
 		var $inputs = $('.radio');
 
@@ -899,7 +872,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toBeHidden();
 	});
 
-	it('should hovered', function() {
+	it ('should hovered', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -927,7 +900,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should checked', function() {
+	it ('should checked', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -955,7 +928,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should checked -> unchecked', function() {
+	it ('should checked -> unchecked', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -984,7 +957,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should hovered -> hovered checked', function() {
+	it ('should hovered -> hovered checked', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1012,7 +985,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should hovered -> hovered checked -> hovered checked', function() {
+	it ('should hovered -> hovered checked -> hovered checked', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1040,7 +1013,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should trigger inline onclick', function() {
+	it ('should trigger inline onclick', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1061,7 +1034,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should trigger inline onchange', function() {
+	it ('should trigger inline onchange', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1082,7 +1055,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should trigger binded onclick', function() {
+	it ('should trigger binded onclick', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1101,7 +1074,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should trigger binded onchange', function() {
+	it ('should trigger binded onchange', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1122,7 +1095,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function chainable the function check', function() {
+	it ('should function chainable the function check', function() {
 		// given
 		var $inputs		= $('.radio').styly(),
 			className	= 'my-class';
@@ -1134,7 +1107,7 @@ describe('Using radio', function() {
 	    expect($inputs.eq(0)).toHaveClass(className);
 	});
 
-	it('should function check', function() {
+	it ('should function check', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1162,7 +1135,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should function check -> check', function() {
+	it ('should function check -> check', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1190,7 +1163,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should function check -> uncheck', function() {
+	it ('should function check -> uncheck', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1218,7 +1191,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it('should function trigger inline onclick on check', function() {
+	it ('should function trigger inline onclick on check', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1238,7 +1211,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onclick on uncheck', function() {
+	it ('should function trigger inline onclick on uncheck', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1258,7 +1231,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onchange on check', function() {
+	it ('should function trigger inline onchange on check', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1278,7 +1251,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function trigger inline onchange on uncheck', function() {
+	it ('should function trigger inline onchange on uncheck', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1296,7 +1269,7 @@ describe('Using radio', function() {
 		expect('change').toHaveBeenTriggeredOn($inputs.eq(1));
 	});
 
-	it('should function trigger binded onclick on check', function() {
+	it ('should function trigger binded onclick on check', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1316,7 +1289,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onclick on uncheck', function() {
+	it ('should function trigger binded onclick on uncheck', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1333,7 +1306,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onchange on check', function() {
+	it ('should function trigger binded onchange on check', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1353,7 +1326,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function trigger binded onchange on uncheck', function() {
+	it ('should function trigger binded onchange on uncheck', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1373,7 +1346,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).toHaveClass('my-class');
 	});
 
-	it('should function not trigger on disable', function() {
+	it ('should function not trigger on disable', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1393,7 +1366,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toHaveClass('my-class');
 	});
 
-	it('should function not trigger on enable', function() {
+	it ('should function not trigger on enable', function() {
 		// given
 		var $inputs = $('.radio').styly();
 
@@ -1413,7 +1386,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(1)).not.toHaveClass('my-class');
 	});
 
-	it('should not check when disabled', function() {
+	it ('should not check when disabled', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1433,7 +1406,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not check when checked disabled', function() {
+	it ('should not check when checked disabled', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1454,7 +1427,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not hover when checked disabled', function() {
+	it ('should not hover when checked disabled', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1475,7 +1448,7 @@ describe('Using radio', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-	it('should not hover when disabled', function() {
+	it ('should not hover when disabled', function() {
 		// given
 		var $inputs = $('.radio').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1496,7 +1469,36 @@ describe('Using radio', function() {
 		expect($inputs.eq(0)).toBeDisabled();
 	});
 
-}); // USING RADIO
+	it ('should starts checked', function() {
+		// given
+		var $inputs = $('.radio'),
+			$labels = $inputs.prev('label');
+
+		// when
+		$inputs.eq(0).click();
+		$inputs.styly();
+
+		// then
+		expect($labels.eq(0)).toHaveClass('radio-styly');
+		expect($labels.eq(0)).not.toHaveClass('radio-hover');
+		expect($labels.eq(0)).toHaveClass('radio-checked');
+		expect($labels.eq(0)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(0)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(0)).toBeChecked();
+		expect($inputs.eq(0)).not.toBeDisabled();
+
+		expect($labels.eq(1)).toHaveClass('radio-styly');
+		expect($labels.eq(1)).not.toHaveClass('radio-hover');
+		expect($labels.eq(1)).not.toHaveClass('radio-checked');
+		expect($labels.eq(1)).not.toHaveClass('radio-hover-checked');
+		expect($labels.eq(1)).not.toHaveClass('radio-disabled');
+		expect($labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect($inputs.eq(1)).not.toBeChecked();
+		expect($inputs.eq(1)).not.toBeDisabled();
+	});
+
+});
 
 describe('Using checkbox and radio', function() {
 
@@ -1512,7 +1514,7 @@ describe('Using checkbox and radio', function() {
 		$('.styly').parent().remove();
 	});
 
-	it('should checked with right class', function() {
+	it ('should checked with right class', function() {
 		// given
 		var $inputs	= $('.styly').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1558,7 +1560,7 @@ describe('Using checkbox and radio', function() {
 		expect($inputs.eq(3)).not.toBeDisabled();
 	});
 
-	it('should unchecked with right class', function() {
+	it ('should unchecked with right class', function() {
 		// given
 		var $inputs	= $('.styly').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1604,7 +1606,7 @@ describe('Using checkbox and radio', function() {
 		expect($inputs.eq(3)).not.toBeDisabled();
 	});
 
-	it('should disable with right class', function() {
+	it ('should disable with right class', function() {
 		// given
 		var $inputs	= $('.styly').styly(),
 			$labels = $inputs.parent().children('label');
@@ -1650,7 +1652,7 @@ describe('Using checkbox and radio', function() {
 		expect($inputs.eq(3)).toBeDisabled();
 	});
 
-	it('should enable with right class', function() {
+	it ('should enable with right class', function() {
 		// given
 		var $inputs	= $('.styly').styly(),
 		$labels = $inputs.parent().children('label');
