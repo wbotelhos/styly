@@ -69,17 +69,17 @@
 						if (label.hasClass(self._checked)) {
 							label.addClass(self._hoverChecked).removeClass(self._checked);
 						} else {
-							label.addClass(self._hover);
+							label.removeClass(self._unchecked).addClass(self._hover);
 						}
 					}
 				}, function() {
 					var label = $(this);
 
 					if (!label.hasClass(self._disabled) && !label.hasClass(self._disabledChecked)) {
-						if (label.hasClass(self._hoverChecked)) {
-							label.addClass(self._checked).removeClass(self._hover).removeClass(self._hoverChecked);
+						if (label.hasClass(self._hover)) {
+							label.addClass(self._unchecked).removeClass(self._hover);
 						} else {
-							label.removeClass(self._hover);
+							label.addClass(self._checked).removeClass(self._hoverChecked);
 						}
 					}
 				}).click(function(evt) {
@@ -90,7 +90,7 @@
 					if (!label.hasClass(self._disabled) && !label.hasClass(self._disabledChecked)) {
 						if (label.hasClass(self._checked)) {
 							if (!self.isRadio) {
-								label.removeClass(self._checked);
+								label.addClass(self._unchecked).removeClass(self._checked);
 								$this.removeAttr('checked');
 							}
 						} else if (label.hasClass(self._hoverChecked)) {
@@ -106,9 +106,9 @@
 							}
 
 							if (label.hasClass(self._hover)) {
-								label.removeClass(self._hover).addClass(self._hoverChecked);
+								label.addClass(self._hoverChecked).removeClass(self._hover);
 							} else {
-								label.addClass(self._checked);
+								label.addClass(self._checked).removeClass(self._unchecked);
 							}
 	
 							$this.attr('checked', 'checked');
@@ -175,32 +175,33 @@
 					disabled		= prefix + opt.disabledClass,
 					checked			= prefix + opt.checkedClass,
 					hoverChecked	= prefix + opt.hoverCheckedClass,
-					disabledChecked	= prefix + opt.disabledCheckedClass;
+					disabledChecked	= prefix + opt.disabledCheckedClass,
+					unchecked		= prefix + opt.uncheckedClass;
 
 				if (isEnable) {
 					$this.removeAttr('disabled');
-	
-					label.removeClass(disabled);
-	
-					if (label.hasClass(disabledChecked)) {
+
+					if (label.hasClass(disabled)) {
+						label.addClass(unchecked).removeClass(disabled);
+					} else if (label.hasClass(disabledChecked)) {
 						label.addClass(checked).removeClass(disabledChecked);
 					}
 	
 					label.css('opacity', '1');
 				} else {
 					if (isRadio) {
-						label.removeClass(checked);
+						label.removeClass(checked).removeClass(hoverChecked);
 						$this.removeAttr('checked');					
 					}
 	
 					$this.attr('disabled', 'disabled');
-	
+
 					if (label.hasClass(checked)) {
-						label.removeClass(checked).addClass(disabledChecked);
+						label.addClass(disabledChecked).removeClass(checked);
 					} else if (label.hasClass(hoverChecked)) {
-						label.removeClass(hoverChecked).addClass(disabledChecked);
+						label.addClass(disabledChecked).removeClass(hoverChecked);
 					} else {
-						label.addClass(disabled);
+						label.addClass(disabled).removeClass(unchecked);
 					}
 	
 					label.css('opacity', '.6');
@@ -232,16 +233,25 @@
 			if (onchange) {
 				onchange.call(self);
 			}
+		}, uncheck: function(input) {
+			var self	= this,
+				label	= $('label[for="' + $(input).removeAttr('checked').attr('id') + '"]');
+
+			if (label.hasClass(self._checked)) {
+				label.addClass(self._unchecked).removeClass(self._checked);
+			} else if (label.hasClass(self._hoverChecked)) {
+				label.addClass(self._hover).removeClass(self._hoverChecked);
+			}
 		}, uncheckByClass: function() {
 			var self	= this,
-				name	= $(self).attr('class');
+				clazz	= $(self).attr('class');
 
-			if (name.split(' ').length > 1) {
-				$.error('You must to use just one class when uncheckAll options is enabled! (' + name + ')');
+			if (clazz.split(' ').length > 1) {
+				$.error('You must to use just one class when uncheckAll options is enabled! (' + clazz + ')');
 			}
 
-			$('input.' + name).filter(':enabled').each(function() {
-				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(self._checked);
+			$('input.' + clazz).filter(':enabled').each(function() {
+				methods.uncheck.call(self, this);
 			});
 		}, uncheckByName: function() {
 			var self	= this,
@@ -249,7 +259,7 @@
 				name	= $this.attr('name');
 
 			$('input[name="' + name + '"]').each(function() {
-				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(self._checked);
+				methods.uncheck.call(self, this);
 			});
 		}
 	};
