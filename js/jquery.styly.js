@@ -46,52 +46,52 @@
 					disabled		= prefix + 'disabled',
 					disabledChecked	= prefix + 'disabled-checked',
 
-					$labelEach		= $('label[for="' + id + '"]').addClass(unchecked);
+					labelEach		= $('label[for="' + id + '"]').addClass(unchecked);
 
 				if ($this.is(':checked') && $this.is(':hover')) {
-					$labelEach.addClass(hoverChecked);
+					labelEach.addClass(hoverChecked);
 				} else if ($this.is(':checked')) {
-					$labelEach.addClass(checked);
+					labelEach.addClass(checked);
 				} else if ($this.is(':hover')) {
-					$labelEach.addClass(hover);
+					labelEach.addClass(hover);
 				}
 
-				$('<div class="styly-wrapper"/>').insertBefore($labelEach).append($labelEach, $this);
+				$('<div class="styly-wrapper"/>').insertBefore(labelEach).append(labelEach, $this);
 
-				$labelEach.hover(function() {
-					var $label = $(this);
+				labelEach.hover(function() {
+					var label = $(this);
 
-					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
-						if ($label.hasClass(checked)) {
-							$label.addClass(hoverChecked).removeClass(checked);
+					if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
+						if (label.hasClass(checked)) {
+							label.addClass(hoverChecked).removeClass(checked);
 						} else {
-							$label.addClass(hover);
+							label.addClass(hover);
 						}
 					}
 				}, function() {
-					var $label = $(this);
+					var label = $(this);
 
-					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
-						if ($label.hasClass(hoverChecked)) {
-							$label.addClass(checked).removeClass(hover).removeClass(hoverChecked);
+					if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
+						if (label.hasClass(hoverChecked)) {
+							label.addClass(checked).removeClass(hover).removeClass(hoverChecked);
 						} else {
-							$label.removeClass(hover);
+							label.removeClass(hover);
 						}
 					}
 				}).click(function(evt) {
 					evt.preventDefault();
 
-					var $label = $(this);
+					var label = $(this);
 
-					if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
-						if ($label.hasClass(checked)) {
+					if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
+						if (label.hasClass(checked)) {
 							if (!isRadio) {
-								$label.removeClass(checked);
+								label.removeClass(checked);
 								$this.removeAttr('checked');
 							}
-						} else if ($label.hasClass(hoverChecked)) {
+						} else if (label.hasClass(hoverChecked)) {
 							if (!isRadio) {
-								$label.addClass(hover).removeClass(hoverChecked);
+								label.addClass(hover).removeClass(hoverChecked);
 								$this.removeAttr('checked');
 							}
 						} else {
@@ -101,10 +101,10 @@
 								methods.uncheckByClass.call($this, checked);
 							}
 
-							if ($label.hasClass(hover)) {
-								$label.removeClass(hover).addClass(hoverChecked);
+							if (label.hasClass(hover)) {
+								label.removeClass(hover).addClass(hoverChecked);
 							} else {
-								$label.addClass(checked);
+								label.addClass(checked);
 							}
 	
 							$this.attr('checked', 'checked');
@@ -120,7 +120,7 @@
 			return this.each(function() {
 
 				var $this			= $(this),
-					$label			= $this.prev('label'),
+					label			= $this.prev('label'),
 					isRadio			= $this.is(':radio'),
 					prefix			= isRadio ? 'radio-' : 'check-',
 					hover			= prefix + 'hover',
@@ -129,7 +129,7 @@
 					disabled		= prefix + 'disabled',
 					disabledChecked = prefix + 'disabled-checked';
 
-				if (!$label.hasClass(disabled) && !$label.hasClass(disabledChecked)) {
+				if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
 					if (isCheck) {
 						if (isRadio) {
 							methods.uncheckByName.call($this, checked);
@@ -141,15 +141,15 @@
 							}
 						}
 	
-						if ($label.hasClass(hover)) {
-							$label.addClass(hoverChecked);
+						if (label.hasClass(hover)) {
+							label.addClass(hoverChecked);
 						} else {
-							$label.addClass(checked);
+							label.addClass(checked);
 						}
 	
 						$this.attr('checked', 'checked');
 					} else {
-						$label.removeClass(checked);
+						label.removeClass(checked);
 						$this.removeAttr('checked');
 					}
 		
@@ -162,7 +162,7 @@
 			return this.each(function() {
 
 				var $this			= $(this),
-					$label			= $this.prev('label'),
+					label			= $this.prev('label'),
 					isRadio			= $this.is(':radio'),
 					prefix			= isRadio ? 'radio-' : 'check-',
 					checked			= prefix + 'checked',
@@ -173,42 +173,42 @@
 				if (isEnable) {
 					$this.removeAttr('disabled');
 	
-					$label.removeClass(disabled);
+					label.removeClass(disabled);
 	
-					if ($label.hasClass(disabledChecked)) {
-						$label.addClass(checked).removeClass(disabledChecked);
+					if (label.hasClass(disabledChecked)) {
+						label.addClass(checked).removeClass(disabledChecked);
 					}
 	
-					$label.css('opacity', '1');
+					label.css('opacity', '1');
 				} else {
 					if (isRadio) {
-						$label.removeClass(checked);
+						label.removeClass(checked);
 						$this.removeAttr('checked');					
 					}
 	
 					$this.attr('disabled', 'disabled');
 	
-					if ($label.hasClass(checked)) {
-						$label.removeClass(checked).addClass(disabledChecked);
-					} else if ($label.hasClass(hoverChecked)) {
-						$label.removeClass(hoverChecked).addClass(disabledChecked);
+					if (label.hasClass(checked)) {
+						label.removeClass(checked).addClass(disabledChecked);
+					} else if (label.hasClass(hoverChecked)) {
+						label.removeClass(hoverChecked).addClass(disabledChecked);
 					} else {
-						$label.addClass(disabled);
+						label.addClass(disabled);
 					}
 	
-					$label.css('opacity', '.6');
+					label.css('opacity', '.6');
 				}
 
 			});
 		}, triggerEvents: function() {
-			var $events = this.data('events');
+			var events = this.data('events');
 
-			if ($events) {
-				if ($events.click) {
+			if (events) {
+				if (events.click) {
 					this.triggerHandler('click');
 				}
 
-				if ($events.change) {
+				if (events.change) {
 					this.triggerHandler('change');
 				}
 			}
