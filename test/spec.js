@@ -34,10 +34,10 @@ describe('Using checkbox', function() {
 
 		// then
 	    expect($wrappers.eq(0).is('div')).toBeTruthy();
-	    expect($wrappers.eq(0)).toHaveClass('styly-wrapper');
+	    expect($wrappers.eq(0)).toHaveClass('styly-checkbox');
 
 	    expect($wrappers.eq(1).is('div')).toBeTruthy();
-	    expect($wrappers.eq(1)).toHaveClass('styly-wrapper');
+	    expect($wrappers.eq(1)).toHaveClass('styly-checkbox');
 	});
 
 	it ('should normal', function() {
@@ -50,21 +50,21 @@ describe('Using checkbox', function() {
 		var labels = inputs.parent().children('label');
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -90,21 +90,21 @@ describe('Using checkbox', function() {
 		labels.mouseover();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -118,21 +118,21 @@ describe('Using checkbox', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -146,21 +146,21 @@ describe('Using checkbox', function() {
 		labels.eq(0).click().click();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -174,21 +174,21 @@ describe('Using checkbox', function() {
 		labels.eq(0).mouseover().click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -202,21 +202,21 @@ describe('Using checkbox', function() {
 		labels.eq(0).mouseover().click().click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -298,21 +298,21 @@ describe('Using checkbox', function() {
 		inputs.styly('enable', false);
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).toBeDisabled();
 	});
@@ -326,21 +326,21 @@ describe('Using checkbox', function() {
 		inputs.styly('enable', false);
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).toBeDisabled();
 	});
@@ -354,21 +354,21 @@ describe('Using checkbox', function() {
 		inputs.styly('enable', false).styly('enable', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -394,12 +394,12 @@ describe('Using checkbox', function() {
 		inputs.eq(0).styly('check', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 	});
@@ -413,12 +413,12 @@ describe('Using checkbox', function() {
 		inputs.eq(0).styly('check', true).styly('check', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 	});
@@ -432,12 +432,12 @@ describe('Using checkbox', function() {
 		inputs.eq(0).styly('check', true).styly('check', false);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 	});
 
@@ -450,12 +450,12 @@ describe('Using checkbox', function() {
 		inputs.eq(0).styly('check', true).styly('enable', false);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -598,12 +598,12 @@ describe('Using checkbox', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -619,12 +619,12 @@ describe('Using checkbox', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -639,12 +639,12 @@ describe('Using checkbox', function() {
 		labels.eq(0).mouseover();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -660,12 +660,12 @@ describe('Using checkbox', function() {
 		labels.eq(0).mouseover();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -680,21 +680,21 @@ describe('Using checkbox', function() {
 		labels.eq(1).click();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -709,21 +709,21 @@ describe('Using checkbox', function() {
 		labels.eq(1).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -739,21 +739,21 @@ describe('Using checkbox', function() {
 		labels.eq(1).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -768,21 +768,21 @@ describe('Using checkbox', function() {
 		inputs.styly();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -825,10 +825,10 @@ describe('Using radio', function() {
 
 		// then
 	    expect($wrappers.eq(0).is('div')).toBeTruthy();
-	    expect($wrappers.eq(0)).toHaveClass('styly-wrapper');
+	    expect($wrappers.eq(0)).toHaveClass('styly-radio');
 
 	    expect($wrappers.eq(1).is('div')).toBeTruthy();
-	    expect($wrappers.eq(1)).toHaveClass('styly-wrapper');
+	    expect($wrappers.eq(1)).toHaveClass('styly-radio');
 	});
 
 	it ('should normal', function() {
@@ -841,21 +841,21 @@ describe('Using radio', function() {
 		var labels = inputs.parent().children('label');
 
 		// then
-		expect(labels.eq(0)).toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).not.toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -881,21 +881,21 @@ describe('Using radio', function() {
 		labels.mouseover();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).toHaveClass('radio-hover');
-		expect(labels.eq(0)).not.toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -909,21 +909,21 @@ describe('Using radio', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -938,21 +938,21 @@ describe('Using radio', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -966,21 +966,21 @@ describe('Using radio', function() {
 		labels.eq(0).mouseover().click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).not.toHaveClass('radio-checked');
-		expect(labels.eq(0)).toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -994,21 +994,21 @@ describe('Using radio', function() {
 		labels.eq(0).mouseover().click().click();
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).not.toHaveClass('radio-checked');
-		expect(labels.eq(0)).toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -1116,21 +1116,21 @@ describe('Using radio', function() {
 		inputs.eq(0).styly('check', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -1144,21 +1144,21 @@ describe('Using radio', function() {
 		inputs.eq(0).styly('check', true).styly('check', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -1172,21 +1172,21 @@ describe('Using radio', function() {
 		inputs.eq(0).styly('check', true).styly('check', false);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).not.toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -1396,12 +1396,12 @@ describe('Using radio', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels).toHaveClass('radio-unchecked');
-		expect(labels).not.toHaveClass('radio-hover');
-		expect(labels).not.toHaveClass('radio-checked');
-		expect(labels).not.toHaveClass('radio-hover-checked');
-		expect(labels).toHaveClass('radio-disabled');
-		expect(labels).not.toHaveClass('radio-disabled-checked');
+		expect(labels).toHaveClass('unchecked');
+		expect(labels).not.toHaveClass('hover');
+		expect(labels).not.toHaveClass('checked');
+		expect(labels).not.toHaveClass('hover-checked');
+		expect(labels).toHaveClass('disabled');
+		expect(labels).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -1417,12 +1417,12 @@ describe('Using radio', function() {
 		labels.eq(0).click();
 
 		// then
-		expect(labels).toHaveClass('radio-unchecked');
-		expect(labels).not.toHaveClass('radio-hover');
-		expect(labels).not.toHaveClass('radio-checked');
-		expect(labels).not.toHaveClass('radio-hover-checked');
-		expect(labels).toHaveClass('radio-disabled');
-		expect(labels).not.toHaveClass('radio-disabled-checked');
+		expect(labels).toHaveClass('unchecked');
+		expect(labels).not.toHaveClass('hover');
+		expect(labels).not.toHaveClass('checked');
+		expect(labels).not.toHaveClass('hover-checked');
+		expect(labels).toHaveClass('disabled');
+		expect(labels).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -1438,12 +1438,12 @@ describe('Using radio', function() {
 		labels.eq(0).mouseover();
 
 		// then
-		expect(labels).toHaveClass('radio-unchecked');
-		expect(labels).not.toHaveClass('radio-hover');
-		expect(labels).not.toHaveClass('radio-checked');
-		expect(labels).not.toHaveClass('radio-hover-checked');
-		expect(labels).toHaveClass('radio-disabled');
-		expect(labels).not.toHaveClass('radio-disabled-checked');
+		expect(labels).toHaveClass('unchecked');
+		expect(labels).not.toHaveClass('hover');
+		expect(labels).not.toHaveClass('checked');
+		expect(labels).not.toHaveClass('hover-checked');
+		expect(labels).toHaveClass('disabled');
+		expect(labels).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -1459,12 +1459,12 @@ describe('Using radio', function() {
 		labels.eq(0).mouseover();
 
 		// then
-		expect(labels).toHaveClass('radio-unchecked');
-		expect(labels).not.toHaveClass('radio-hover');
-		expect(labels).not.toHaveClass('radio-checked');
-		expect(labels).not.toHaveClass('radio-hover-checked');
-		expect(labels).toHaveClass('radio-disabled');
-		expect(labels).not.toHaveClass('radio-disabled-checked');
+		expect(labels).toHaveClass('unchecked');
+		expect(labels).not.toHaveClass('hover');
+		expect(labels).not.toHaveClass('checked');
+		expect(labels).not.toHaveClass('hover-checked');
+		expect(labels).toHaveClass('disabled');
+		expect(labels).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 	});
@@ -1479,21 +1479,21 @@ describe('Using radio', function() {
 		inputs.styly();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('radio-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover');
-		expect(labels.eq(0)).toHaveClass('radio-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(0)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('radio-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover');
-		expect(labels.eq(1)).not.toHaveClass('radio-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(1)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
@@ -1523,39 +1523,39 @@ describe('Using checkbox and radio', function() {
 		inputs.styly('check', true);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 
-		expect(labels.eq(2)).toHaveClass('radio-unchecked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover');
-		expect(labels.eq(2)).not.toHaveClass('radio-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(2)).toHaveClass('unchecked');
+		expect(labels.eq(2)).not.toHaveClass('hover');
+		expect(labels.eq(2)).not.toHaveClass('checked');
+		expect(labels.eq(2)).not.toHaveClass('hover-checked');
+		expect(labels.eq(2)).not.toHaveClass('disabled');
+		expect(labels.eq(2)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(2)).not.toBeChecked();
 		expect(inputs.eq(2)).not.toBeDisabled();
 
-		expect(labels.eq(3)).toHaveClass('radio-unchecked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover');
-		expect(labels.eq(3)).toHaveClass('radio-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(3)).toHaveClass('unchecked');
+		expect(labels.eq(3)).not.toHaveClass('hover');
+		expect(labels.eq(3)).toHaveClass('checked');
+		expect(labels.eq(3)).not.toHaveClass('hover-checked');
+		expect(labels.eq(3)).not.toHaveClass('disabled');
+		expect(labels.eq(3)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(3)).toBeChecked();
 		expect(inputs.eq(3)).not.toBeDisabled();
 	});
@@ -1569,39 +1569,39 @@ describe('Using checkbox and radio', function() {
 		inputs.styly('check', true).styly('check', false);
 
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 
-		expect(labels.eq(2)).toHaveClass('radio-unchecked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover');
-		expect(labels.eq(2)).not.toHaveClass('radio-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(2)).toHaveClass('unchecked');
+		expect(labels.eq(2)).not.toHaveClass('hover');
+		expect(labels.eq(2)).not.toHaveClass('checked');
+		expect(labels.eq(2)).not.toHaveClass('hover-checked');
+		expect(labels.eq(2)).not.toHaveClass('disabled');
+		expect(labels.eq(2)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(2)).not.toBeChecked();
 		expect(inputs.eq(2)).not.toBeDisabled();
 
-		expect(labels.eq(3)).toHaveClass('radio-unchecked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover');
-		expect(labels.eq(3)).not.toHaveClass('radio-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(3)).toHaveClass('unchecked');
+		expect(labels.eq(3)).not.toHaveClass('hover');
+		expect(labels.eq(3)).not.toHaveClass('checked');
+		expect(labels.eq(3)).not.toHaveClass('hover-checked');
+		expect(labels.eq(3)).not.toHaveClass('disabled');
+		expect(labels.eq(3)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(3)).not.toBeChecked();
 		expect(inputs.eq(3)).not.toBeDisabled();
 	});
@@ -1615,39 +1615,39 @@ describe('Using checkbox and radio', function() {
 		inputs.styly('enable', false);
 
 		// then
-		expect(labels.eq(0)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).not.toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
 
-		expect(labels.eq(1)).not.toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).not.toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).toBeDisabled();
 
-		expect(labels.eq(2)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover');
-		expect(labels.eq(2)).not.toHaveClass('radio-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(2)).toHaveClass('radio-disabled');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(2)).not.toHaveClass('unchecked');
+		expect(labels.eq(2)).not.toHaveClass('hover');
+		expect(labels.eq(2)).not.toHaveClass('checked');
+		expect(labels.eq(2)).not.toHaveClass('hover-checked');
+		expect(labels.eq(2)).toHaveClass('disabled');
+		expect(labels.eq(2)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(2)).not.toBeChecked();
 		expect(inputs.eq(2)).toBeDisabled();
 
-		expect(labels.eq(3)).not.toHaveClass('radio-unchecked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover');
-		expect(labels.eq(3)).not.toHaveClass('radio-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(3)).toHaveClass('radio-disabled');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(3)).not.toHaveClass('unchecked');
+		expect(labels.eq(3)).not.toHaveClass('hover');
+		expect(labels.eq(3)).not.toHaveClass('checked');
+		expect(labels.eq(3)).not.toHaveClass('hover-checked');
+		expect(labels.eq(3)).toHaveClass('disabled');
+		expect(labels.eq(3)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(3)).not.toBeChecked();
 		expect(inputs.eq(3)).toBeDisabled();
 	});
@@ -1661,39 +1661,39 @@ describe('Using checkbox and radio', function() {
 		inputs.styly('enable', false).styly('enable', true);
 		
 		// then
-		expect(labels.eq(0)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(0)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(0)).toHaveClass('unchecked');
+		expect(labels.eq(0)).not.toHaveClass('hover');
+		expect(labels.eq(0)).not.toHaveClass('checked');
+		expect(labels.eq(0)).not.toHaveClass('hover-checked');
+		expect(labels.eq(0)).not.toHaveClass('disabled');
+		expect(labels.eq(0)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(0)).not.toBeChecked();
 		expect(inputs.eq(0)).not.toBeDisabled();
 
-		expect(labels.eq(1)).toHaveClass('checkbox-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-hover-checked');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled');
-		expect(labels.eq(1)).not.toHaveClass('checkbox-disabled-checked');
+		expect(labels.eq(1)).toHaveClass('unchecked');
+		expect(labels.eq(1)).not.toHaveClass('hover');
+		expect(labels.eq(1)).not.toHaveClass('checked');
+		expect(labels.eq(1)).not.toHaveClass('hover-checked');
+		expect(labels.eq(1)).not.toHaveClass('disabled');
+		expect(labels.eq(1)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(1)).not.toBeChecked();
 		expect(inputs.eq(1)).not.toBeDisabled();
 
-		expect(labels.eq(2)).toHaveClass('radio-unchecked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover');
-		expect(labels.eq(2)).not.toHaveClass('radio-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(2)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(2)).toHaveClass('unchecked');
+		expect(labels.eq(2)).not.toHaveClass('hover');
+		expect(labels.eq(2)).not.toHaveClass('checked');
+		expect(labels.eq(2)).not.toHaveClass('hover-checked');
+		expect(labels.eq(2)).not.toHaveClass('disabled');
+		expect(labels.eq(2)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(2)).not.toBeChecked();
 		expect(inputs.eq(2)).not.toBeDisabled();
 
-		expect(labels.eq(3)).toHaveClass('radio-unchecked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover');
-		expect(labels.eq(3)).not.toHaveClass('radio-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-hover-checked');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled');
-		expect(labels.eq(3)).not.toHaveClass('radio-disabled-checked');
+		expect(labels.eq(3)).toHaveClass('unchecked');
+		expect(labels.eq(3)).not.toHaveClass('hover');
+		expect(labels.eq(3)).not.toHaveClass('checked');
+		expect(labels.eq(3)).not.toHaveClass('hover-checked');
+		expect(labels.eq(3)).not.toHaveClass('disabled');
+		expect(labels.eq(3)).not.toHaveClass('disabled-checked');
 		expect(inputs.eq(3)).not.toBeChecked();
 		expect(inputs.eq(3)).not.toBeDisabled();
 	});
