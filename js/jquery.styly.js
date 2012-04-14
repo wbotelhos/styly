@@ -39,14 +39,14 @@
 					isRadio			= $this.is(':radio'),
 					prefix			= isRadio ? 'radio-' : 'check-',
 
-					normal			= prefix + 'styly',
+					unchecked		= prefix + 'unchecked',
 					hover			= prefix + 'hover',
 					checked			= prefix + 'checked',
 					hoverChecked	= prefix + 'hover-checked',
 					disabled		= prefix + 'disabled',
 					disabledChecked	= prefix + 'disabled-checked',
 
-					$labelEach		= $('label[for="' + id + '"]').addClass(normal);
+					$labelEach		= $('label[for="' + id + '"]').addClass(unchecked);
 
 				if ($this.is(':checked') && $this.is(':hover')) {
 					$labelEach.addClass(hoverChecked);
@@ -157,7 +157,6 @@
 						methods.triggerEvents.call($this);
 					}
 				}
-
 			});
 		}, enable: function(isEnable) {
 			return this.each(function() {
@@ -170,7 +169,7 @@
 					hoverChecked	= prefix + 'hover-checked',
 					disabled		= prefix + 'disabled',
 					disabledChecked	= prefix + 'disabled-checked';
-	
+
 				if (isEnable) {
 					$this.removeAttr('disabled');
 	
@@ -254,8 +253,8 @@
 	};
 
 	$.fn.styly.defaults = {
-		trigger:	true,
-		uncheckAll:	false
+		trigger		: true,
+		uncheckAll	: false
 	};
 
 })(jQuery);
