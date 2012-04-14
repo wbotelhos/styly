@@ -1,23 +1,26 @@
 @CHARSET "UTF-8";
 
 .styly-checkbox label, .styly-radio label {
+	background-image: url('../img/icons.png');
+	background-repeat: no-repeat;
 	cursor: pointer;
 	display: block;
-	height: 21px;
-	padding-left: 30px;
-	padding-top: 4px;
+	height: 20px;
+	padding-left: 29px;
+	padding-top: 5px;
+	width: 25px;
 }
 
-.styly-checkbox .unchecked			{ background: url('../img/check.png') no-repeat;          }
-.styly-checkbox .hover				{ background: url('../img/check.png') no-repeat 0 -25px;  }
-.styly-checkbox .checked			{ background: url('../img/check.png') no-repeat 0 -50px;  }
-.styly-checkbox .hover-checked		{ background: url('../img/check.png') no-repeat 0 -75px;  }
-.styly-checkbox .disabled			{ background: url('../img/check.png') no-repeat 0 -100px; cursor: default !important; }
-.styly-checkbox .disabled-checked	{ background: url('../img/check.png') no-repeat 0 -125px; cursor: default !important; }
+.styly-checkbox .styly-unchecked		{ background-position: 0 -4px;   }
+.styly-checkbox .styly-hover			{ background-position: 0 -68px;  }
+.styly-checkbox .styly-checked			{ background-position: 0 -149px; }
+.styly-checkbox .styly-hover-checked	{ background-position: 0 -223px; }
+.styly-checkbox .styly-disabled			{ background-position: 0 -289px; cursor: default !important; }
+.styly-checkbox .styly-disabled-checked	{ background-position: 0 -347px; cursor: default !important; }
 
-.styly-radio .unchecked				{ background: url('../img/radio.png') no-repeat;          }
-.styly-radio .hover					{ background: url('../img/radio.png') no-repeat 0 -25px;  }
-.styly-radio .checked				{ background: url('../img/radio.png') no-repeat 0 -50px;  }
-.styly-radio .hover-checked			{ background: url('../img/radio.png') no-repeat 0 -75px;  }
-.styly-radio .disabled				{ background: url('../img/radio.png') no-repeat 0 -100px; cursor: default !important; }
-.styly-radio .disabled-checked		{ background: url('../img/radio.png') no-repeat 0 -125px; cursor: default !important; }
+.styly-radio .styly-unchecked			{ background-position: -108px -4px;   }
+.styly-radio .styly-hover				{ background-position: -108px -68px;  }
+.styly-radio .styly-checked				{ background-position: -108px -149px; }
+.styly-radio .styly-hover-checked		{ background-position: -108px -223px; }
+.styly-radio .styly-disabled			{ background-position: -108px -289px; cursor: default !important; }
+.styly-radio .styly-disabled-checked	{ background-position: -108px -347px; cursor: default !important; }

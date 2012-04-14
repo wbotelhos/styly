@@ -248,14 +248,14 @@
 	};
 
 	$.fn.styly.defaults = {
-		checkedClass			: 'checked',
-		disabledCheckedClass	: 'disabled-checked',
-		disabledClass			: 'disabled',
-		hoverClass				: 'hover',
-		hoverCheckedClass		: 'hover-checked',
+		checkedClass			: 'styly-checked',
+		disabledCheckedClass	: 'styly-disabled-checked',
+		disabledClass			: 'styly-disabled',
+		hoverClass				: 'styly-hover',
+		hoverCheckedClass		: 'styly-hover-checked',
 		trigger					: true,
 		uncheckAll				: false,
-		uncheckedClass			: 'unchecked'
+		uncheckedClass			: 'styly-unchecked'
 	};
 
 })(jQuery);
