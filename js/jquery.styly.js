@@ -100,9 +100,9 @@
 							}
 						} else {
 							if (self.isRadio) {
-								methods.uncheckByName.call($this, self._checked);
+								methods.uncheckByName.call(self);
 							} else if (self.opt.uncheckAll) {
-								methods.uncheckByClass.call($this, self._checked);
+								methods.uncheckByClass.call(self);
 							}
 
 							if (label.hasClass(self._hover)) {
@@ -115,7 +115,7 @@
 						}
 	
 						if (self.opt.trigger) {
-							methods.triggerEvents.call($this);
+							methods.triggerEvents.call(self);
 						}
 					}
 				});
@@ -123,7 +123,8 @@
 		}, check: function(isCheck, isTrigger) {
 			return this.each(function() {
 
-				var $this			= $(this),
+				var	self			= this,
+					$this			= $(self),
 					label			= $this.prev('label'),
 					isRadio			= $this.is(':radio'),
 					prefix			= isRadio ? 'radio-' : 'check-',
@@ -136,12 +137,12 @@
 				if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
 					if (isCheck) {
 						if (isRadio) {
-							methods.uncheckByName.call($this, checked);
+							methods.uncheckByName.call(self);
 						} else {
 							var opt = $this.data('settings');
 
 							if (opt.uncheckAll) {
-								methods.uncheckByClass.call($this, checked);
+								methods.uncheckByClass.call(self);
 							}
 						}
 	
@@ -158,7 +159,7 @@
 					}
 		
 					if (isTrigger === undefined || isTrigger) {
-						methods.triggerEvents.call($this);
+						methods.triggerEvents.call(self);
 					}
 				}
 			});
@@ -205,43 +206,48 @@
 
 			});
 		}, triggerEvents: function() {
-			var events = this.data('events');
+			var self	= this,
+				$this	= $(self),
+				events	= $this.data('events');
 
 			if (events) {
 				if (events.click) {
-					this.triggerHandler('click');
+					$this.triggerHandler('click');
 				}
 
 				if (events.change) {
-					this.triggerHandler('change');
+					$this.triggerHandler('change');
 				}
 			}
 
-			var onclick		= this[0].onclick,
-				onchange	= this[0].onchange;
+			var onclick		= self.onclick,
+				onchange	= self.onchange;
 
 			if (onclick) {
-				onclick.call(this[0]);
+				onclick.call(self);
 			}
 
 			if (onchange) {
-				onchange.call(this[0]);
+				onchange.call(self);
 			}
-		}, uncheckByClass: function(checked) {
-			var name = this.attr('class');
+		}, uncheckByClass: function() {
+			var self	= this,
+				name	= $(self).attr('class');
 
 			if (name.split(' ').length > 1) {
-				$.error('You must to use just one class when uncheckAll options is enabled! (' + name +')');
+				$.error('You must to use just one class when uncheckAll options is enabled! (' + name + ')');
 			}
 
 			$('input.' + name).filter(':enabled').each(function() {
-				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(checked);
+				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(self._checked);
 			});
-		}, uncheckByName: function(checked) {
-			var name = this.attr('name');
+		}, uncheckByName: function() {
+			var self	= this,
+				$this	= $(self),
+				name	= $this.attr('name');
 
 			$('input[name="' + name + '"]').each(function() {
-				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(checked);
+				$('label[for="' + $(this).removeAttr('checked').attr('id') + '"]').removeClass(self._checked);
 			});
 		}
 	};
