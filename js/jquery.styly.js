@@ -40,14 +40,14 @@
 
 				self.isRadio			= $this.is(':radio');
 
-				var prefix				= self.isRadio ? 'radio-' : 'check-';
+				var prefix				= self.isRadio ? 'radio-' : 'checkbox-';
 
-				self._unchecked			= prefix + 'unchecked';
-				self._hover				= prefix + 'hover';
-				self._checked			= prefix + 'checked';
-				self._hoverChecked		= prefix + 'hover-checked';
-				self._disabled			= prefix + 'disabled';
-				self._disabledChecked	= prefix + 'disabled-checked';
+				self._checked			= prefix + self.opt.checkedClass;
+				self._disabled			= prefix + self.opt.disabledClass;
+				self._disabledChecked	= prefix + self.opt.disabledCheckedClass;
+				self._hover				= prefix + self.opt.hoverClass;
+				self._hoverChecked		= prefix + self.opt.hoverCheckedClass;
+				self._unchecked			= prefix + self.opt.uncheckedClass;
 
 				var labelEach = $('label[for="' + self.id + '"]').addClass(self._unchecked);
 
@@ -125,14 +125,15 @@
 
 				var	self			= this,
 					$this			= $(self),
+					opt				= $this.data('settings'),
 					label			= $this.prev('label'),
 					isRadio			= $this.is(':radio'),
-					prefix			= isRadio ? 'radio-' : 'check-',
-					hover			= prefix + 'hover',
-					checked			= prefix + 'checked',
-					hoverChecked	= prefix + 'hover-checked',
-					disabled		= prefix + 'disabled',
-					disabledChecked = prefix + 'disabled-checked';
+					prefix			= isRadio ? 'radio-' : 'checkbox-',
+					checked			= prefix + opt.checkedClass,
+					disabled		= prefix + opt.disabledClass,
+					disabledChecked	= prefix + opt.disabledCheckedClass,
+					hover			= prefix + opt.hoverClass,
+					hoverChecked	= prefix + opt.hoverCheckedClass;
 
 				if (!label.hasClass(disabled) && !label.hasClass(disabledChecked)) {
 					if (isCheck) {
@@ -167,13 +168,14 @@
 			return this.each(function() {
 
 				var $this			= $(this),
+					opt				= $this.data('settings'),
 					label			= $this.prev('label'),
 					isRadio			= $this.is(':radio'),
-					prefix			= isRadio ? 'radio-' : 'check-',
-					checked			= prefix + 'checked',
-					hoverChecked	= prefix + 'hover-checked',
-					disabled		= prefix + 'disabled',
-					disabledChecked	= prefix + 'disabled-checked';
+					prefix			= isRadio ? 'radio-' : 'checkbox-',
+					disabled		= prefix + opt.disabledClass,
+					checked			= prefix + opt.checkedClass,
+					hoverChecked	= prefix + opt.hoverCheckedClass,
+					disabledChecked	= prefix + opt.disabledCheckedClass;
 
 				if (isEnable) {
 					$this.removeAttr('disabled');
@@ -263,8 +265,14 @@
 	};
 
 	$.fn.styly.defaults = {
-		trigger		: true,
-		uncheckAll	: false
+		checkedClass			: 'checked',
+		disabledCheckedClass	: 'disabled-checked',
+		disabledClass			: 'disabled',
+		hoverClass				: 'hover',
+		hoverCheckedClass		: 'hover-checked',
+		trigger					: true,
+		uncheckAll				: false,
+		uncheckedClass			: 'unchecked'
 	};
 
 })(jQuery);
