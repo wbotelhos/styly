@@ -756,33 +756,64 @@ describe('Using checkbox', function() {
 		expect(inputs.eq(1)).not.toBeDisabled();
 	});
 
-	it ('should starts checked', function() {
+	it ('[checkbox] should start checked', function() {
 		// given
-		var inputs = $('.checkbox'),
-			labels = inputs.prev('label');
+		var inputs = $('.checkbox').attr('checked', 'checked');
 
 		// when
-		inputs.eq(0).click();
 		inputs.styly();
 
 		// then
-		expect(labels.eq(0)).toHaveClass('styly-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('styly-unchecked-hover');
-		expect(labels.eq(0)).toHaveClass('styly-checked');
-		expect(labels.eq(0)).not.toHaveClass('styly-checked-hover');
-		expect(labels.eq(0)).not.toHaveClass('styly-unchecked-disabled');
-		expect(labels.eq(0)).not.toHaveClass('styly-checked-disabled');
-		expect(inputs.eq(0)).toBeChecked();
-		expect(inputs.eq(0)).not.toBeDisabled();
+		var label = inputs.prev('label');
 
-		expect(labels.eq(1)).toHaveClass('styly-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('styly-unchecked-hover');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked-hover');
-		expect(labels.eq(1)).not.toHaveClass('styly-unchecked-disabled');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked-disabled');
-		expect(inputs.eq(1)).not.toBeChecked();
-		expect(inputs.eq(1)).not.toBeDisabled();
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).not.toHaveClass('styly-unchecked-disabled');
+		expect(label).not.toHaveClass('styly-checked-disabled');
+		expect(inputs).toBeChecked();
+		expect(inputs).not.toBeDisabled();
+	});
+
+	it ('[checkbox] should start disabled', function() {
+		// given
+		var inputs = $('.checkbox').attr('disabled', 'disabled');
+
+		// when
+		inputs.styly();
+
+		// then
+		var label = inputs.prev('label');
+
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).not.toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).toHaveClass('styly-unchecked-disabled');
+		expect(label).not.toHaveClass('styly-checked-disabled');
+		expect(inputs).not.toBeChecked();
+		expect(inputs).toBeDisabled();
+	});
+
+	it ('[checkbox] should start checked disabled', function() {
+		// given
+		var inputs = $('.checkbox').attr('checked', 'checked').attr('disabled', 'disabled');
+
+		// when
+		inputs.styly();
+
+		// then
+		var label = inputs.prev('label');
+
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).not.toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).not.toHaveClass('styly-unchecked-disabled');
+		expect(label).toHaveClass('styly-checked-disabled');
+		expect(inputs).toBeChecked();
+		expect(inputs).toBeDisabled();
 	});
 
 }); 
@@ -791,8 +822,8 @@ describe('Using radio', function() {
 
 	beforeEach(function() {
 		$('body')
-		.append('<label for="agree">Agree</label><input id="agree" type="radio" name="agreement" class="radio"/>')
-		.append('<label for="desagree">Desagree</label><input id="desagree" type="radio" name="agreement" class="radio"/>');
+		.append('<label for="agree">Agree</label><input id="agree" type="radio" name="agreement" class="radio" />')
+		.append('<label for="desagree">Desagree</label><input id="desagree" type="radio" name="agreement" class="radio" />');
 	});
 
 	afterEach(function() {
@@ -1471,35 +1502,6 @@ describe('Using radio', function() {
 		expect(inputs.eq(0)).toBeDisabled();
 	});
 
-	it ('should starts checked', function() {
-		// given
-		var inputs = $('.radio'),
-			labels = inputs.prev('label');
-
-		// when
-		inputs.eq(0).click();
-		inputs.styly();
-
-		// then
-		expect(labels.eq(0)).toHaveClass('styly-unchecked');
-		expect(labels.eq(0)).not.toHaveClass('styly-unchecked-hover');
-		expect(labels.eq(0)).toHaveClass('styly-checked');
-		expect(labels.eq(0)).not.toHaveClass('styly-checked-hover');
-		expect(labels.eq(0)).not.toHaveClass('styly-unchecked-disabled');
-		expect(labels.eq(0)).not.toHaveClass('styly-checked-disabled');
-		expect(inputs.eq(0)).toBeChecked();
-		expect(inputs.eq(0)).not.toBeDisabled();
-
-		expect(labels.eq(1)).toHaveClass('styly-unchecked');
-		expect(labels.eq(1)).not.toHaveClass('styly-unchecked-hover');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked-hover');
-		expect(labels.eq(1)).not.toHaveClass('styly-unchecked-disabled');
-		expect(labels.eq(1)).not.toHaveClass('styly-checked-disabled');
-		expect(inputs.eq(1)).not.toBeChecked();
-		expect(inputs.eq(1)).not.toBeDisabled();
-	});
-
 	it ('[radio] should check radio just with checked class', function() {
 		// given
 		var inputs	= $('.radio').styly(),
@@ -1595,6 +1597,75 @@ describe('Using radio', function() {
 		expect(labels.eq(0)).toHaveClass('styly-checked-disabled');
 		expect(inputs.eq(0)).toBeChecked();
 		expect(inputs.eq(0)).toBeDisabled();
+	});
+
+	it ('[radio] should start checked', function() {
+		// given
+		var inputs = $('.radio');
+
+		inputs.eq(0).attr('checked', 'checked');
+
+		// when
+		inputs.styly();
+
+		// then
+		var input	= inputs.eq(0),
+			label	= input.prev('label');
+
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).not.toHaveClass('styly-unchecked-disabled');
+		expect(label).not.toHaveClass('styly-checked-disabled');
+		expect(input).toBeChecked();
+		expect(input).not.toBeDisabled();
+	});
+
+	it ('[radio] should start disabled', function() {
+		// given
+		var inputs = $('.radio');
+
+		inputs.eq(0).attr('disabled', 'disabled');
+
+		// when
+		inputs.styly();
+
+		// then
+		var input	= inputs.eq(0),
+			label	= input.prev('label');
+
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).not.toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).toHaveClass('styly-unchecked-disabled');
+		expect(label).not.toHaveClass('styly-checked-disabled');
+		expect(input).not.toBeChecked();
+		expect(input).toBeDisabled();
+	});
+
+	it ('[radio] should start checked disabled', function() {
+		// given
+		var inputs = $('.radio');
+
+		inputs.eq(0).attr('checked', 'checked').attr('disabled', 'disabled');
+
+		// when
+		inputs.styly();
+
+		// then
+		var input	= inputs.eq(0),
+			label	= input.prev('label');
+
+		expect(label).not.toHaveClass('styly-unchecked');
+		expect(label).not.toHaveClass('styly-unchecked-hover');
+		expect(label).not.toHaveClass('styly-checked');
+		expect(label).not.toHaveClass('styly-checked-hover');
+		expect(label).not.toHaveClass('styly-unchecked-disabled');
+		expect(label).toHaveClass('styly-checked-disabled');
+		expect(input).toBeChecked();
+		expect(input).toBeDisabled();
 	});
 
 });

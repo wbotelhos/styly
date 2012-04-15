@@ -36,18 +36,34 @@
 
 				self.opt = $.extend({}, $.fn.styly.defaults, settings);
 
-				var labelEach	= $('label[for="' + self.id + '"]').addClass(self.opt.uncheckedClass),
+				var labelEach	= $('label[for="' + self.id + '"]'),
 					isRadio		= $this.hide().data('settings', self.opt).is(':radio');
 
-				if ($this.is(':checked') && $this.is(':hover')) {
-					labelEach.addClass(self.opt.checkedHoverClass);
-				} else if ($this.is(':checked')) {
-					labelEach.addClass(self.opt.checkedClass);
-				} else if ($this.is(':hover')) {
-					labelEach.addClass(self.opt.uncheckedHoverClass);
-				}
-
 				$('<div />', { 'class': isRadio ? 'styly-radio' : 'styly-checkbox' }).insertBefore(labelEach).append(labelEach, $this);
+
+				if ($this.is(':checked')) {
+					if ($this.is(':enabled')) {
+						if ($this.is(':hover')) {
+							labelEach.addClass(self.opt.checkedHoverClass);
+						} else {
+							labelEach.addClass(self.opt.checkedClass);
+						}
+					} else {
+						labelEach.addClass(self.opt.checkedDisabledClass);
+						labelEach.css({ 'cursor': 'default', 'opacity': '.6' });
+					}
+				} else {
+					if ($this.is(':enabled')) {
+						if ($this.is(':hover')) {
+							labelEach.addClass(self.opt.uncheckedHoverClass);
+						} else {
+							labelEach.addClass(self.opt.uncheckedClass);
+						}
+					} else {
+						labelEach.addClass(self.opt.uncheckedDisabledClass);
+						labelEach.css({ 'cursor': 'default', 'opacity': '.6' });
+					}
+				}
 
 				labelEach.hover(function() {
 					var label = $(this);
