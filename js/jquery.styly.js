@@ -128,14 +128,19 @@
 						}
 	
 						if (label.hasClass(opt.uncheckedHoverClass)) {
-							label.addClass(opt.checkedHoverClass);
-						} else {
-							label.addClass(opt.checkedClass);
+							label.addClass(opt.checkedHoverClass).removeClass(opt.uncheckedHoverClass);
+						} else if (label.hasClass(opt.uncheckedClass)) {
+							label.addClass(opt.checkedClass).removeClass(opt.uncheckedClass);
 						}
 	
 						$this.attr('checked', 'checked');
 					} else {
-						label.removeClass(opt.checkedClass);
+						if (label.hasClass(opt.checkedHoverClass)) {
+							label.addClass(opt.uncheckedHoverClass).removeClass(opt.checkedHoverClass);
+						} else if (label.hasClass(opt.checkedClass)) {
+							label.addClass(opt.uncheckedClass).removeClass(opt.checkedClass);
+						}
+
 						$this.removeAttr('checked');
 					}
 		
@@ -147,7 +152,8 @@
 		}, enable: function(isEnable) {
 			return this.each(function() {
 
-				var $this	= $(this),
+				var self	= this,
+					$this	= $(self),
 					opt		= $this.data('settings'),
 					label	= $this.prev('label');
 
@@ -162,25 +168,27 @@
 	
 					label.css('opacity', '1');
 				} else {
-					if ($this.is(':radio')) {
-						label.removeClass(opt.checkedClass).removeClass(opt.checkedHoverClass);
-						$this.removeAttr('checked');					
-					}
-	
-					$this.attr('disabled', 'disabled');
-
-					if (label.hasClass(opt.checkedClass)) {
-						label.addClass(opt.checkedDisabledClass).removeClass(opt.checkedClass);
-					} else if (label.hasClass(opt.checkedHoverClass)) {
-						label.addClass(opt.checkedDisabledClass).removeClass(opt.checkedHoverClass);
+					if ($this.is(':radio') && $this.is(':checked')) {
+						$('input[type="radio"][name="' + $this.attr('name') + '"]').each(function() {
+							methods.disable.call(self, this);
+						});
 					} else {
-						label.addClass(opt.uncheckedDisabledClass).removeClass(opt.uncheckedClass);
+						methods.disable.call(self, $this);
 					}
-	
-					label.css('opacity', '.6');
 				}
 
 			});
+		}, disable: function(input) {
+			var self	= this,
+				label	= $(input).attr('disabled', 'disabled').prev('label').css('opacity', '.6');
+
+			if (label.hasClass(self.opt.checkedClass)) {
+				label.addClass(self.opt.checkedDisabledClass).removeClass(self.opt.checkedClass);
+			} else if (label.hasClass(self.opt.checkedHoverClass)) {
+				label.addClass(self.opt.checkedDisabledClass).removeClass(self.opt.checkedHoverClass);
+			} else {
+				label.addClass(self.opt.uncheckedDisabledClass).removeClass(self.opt.uncheckedClass);
+			}
 		}, triggerEvents: function() {
 			var self	= this,
 				$this	= $(self),
