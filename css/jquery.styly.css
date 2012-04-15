@@ -11,16 +11,16 @@
 	width: 25px;
 }
 
-.styly-checkbox .styly-unchecked		{ background-position: 0 -4px;   }
-.styly-checkbox .styly-hover			{ background-position: 0 -68px;  }
-.styly-checkbox .styly-checked			{ background-position: 0 -149px; }
-.styly-checkbox .styly-hover-checked	{ background-position: 0 -223px; }
-.styly-checkbox .styly-disabled			{ background-position: 0 -289px; cursor: default !important; }
-.styly-checkbox .styly-disabled-checked	{ background-position: 0 -347px; cursor: default !important; }
+.styly-checkbox .styly-unchecked			{ background-position: 0 -4px;   }
+.styly-checkbox .styly-checked				{ background-position: 0 -149px; }
+.styly-checkbox .styly-unchecked-hover		{ background-position: 0 -68px;  }
+.styly-checkbox .styly-checked-hover		{ background-position: 0 -223px; }
+.styly-checkbox .styly-unchecked-disabled	{ background-position: 0 -289px; cursor: default !important; }
+.styly-checkbox .styly-checked-disabled		{ background-position: 0 -347px; cursor: default !important; }
 
-.styly-radio .styly-unchecked			{ background-position: -108px -4px;   }
-.styly-radio .styly-hover				{ background-position: -108px -68px;  }
-.styly-radio .styly-checked				{ background-position: -108px -149px; }
-.styly-radio .styly-hover-checked		{ background-position: -108px -223px; }
-.styly-radio .styly-disabled			{ background-position: -108px -289px; cursor: default !important; }
-.styly-radio .styly-disabled-checked	{ background-position: -108px -347px; cursor: default !important; }
+.styly-radio .styly-unchecked				{ background-position: -108px -4px;   }
+.styly-radio .styly-unchecked-hover			{ background-position: -108px -68px;  }
+.styly-radio .styly-checked					{ background-position: -108px -149px; }
+.styly-radio .styly-checked-hover			{ background-position: -108px -223px; }
+.styly-radio .styly-unchecked-disabled		{ background-position: -108px -289px; cursor: default !important; }
+.styly-radio .styly-checked-disabled		{ background-position: -108px -347px; cursor: default !important; }

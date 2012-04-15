@@ -40,11 +40,11 @@
 					isRadio		= $this.hide().data('settings', self.opt).is(':radio');
 
 				if ($this.is(':checked') && $this.is(':hover')) {
-					labelEach.addClass(self.opt.hoverCheckedClass);
+					labelEach.addClass(self.opt.checkedHoverClass);
 				} else if ($this.is(':checked')) {
 					labelEach.addClass(self.opt.checkedClass);
 				} else if ($this.is(':hover')) {
-					labelEach.addClass(self.opt.hoverClass);
+					labelEach.addClass(self.opt.uncheckedHoverClass);
 				}
 
 				$('<div />', { 'class': isRadio ? 'styly-radio' : 'styly-checkbox' }).insertBefore(labelEach).append(labelEach, $this);
@@ -52,21 +52,21 @@
 				labelEach.hover(function() {
 					var label = $(this);
 
-					if (!label.hasClass(self.opt.disabledClass) && !label.hasClass(self.opt.disabledCheckedClass)) {
+					if (!label.hasClass(self.opt.uncheckedDisabledClass) && !label.hasClass(self.opt.checkedDisabledClass)) {
 						if (label.hasClass(self.opt.checkedClass)) {
-							label.addClass(self.opt.hoverCheckedClass).removeClass(self.opt.checkedClass);
+							label.addClass(self.opt.checkedHoverClass).removeClass(self.opt.checkedClass);
 						} else {
-							label.removeClass(self.opt.uncheckedClass).addClass(self.opt.hoverClass);
+							label.removeClass(self.opt.uncheckedClass).addClass(self.opt.uncheckedHoverClass);
 						}
 					}
 				}, function() {
 					var label = $(this);
 
-					if (!label.hasClass(self.opt.disabledClass) && !label.hasClass(self.opt.disabledCheckedClass)) {
-						if (label.hasClass(self.opt.hoverClass)) {
-							label.addClass(self.opt.uncheckedClass).removeClass(self.opt.hoverClass);
+					if (!label.hasClass(self.opt.uncheckedDisabledClass) && !label.hasClass(self.opt.checkedDisabledClass)) {
+						if (label.hasClass(self.opt.uncheckedHoverClass)) {
+							label.addClass(self.opt.uncheckedClass).removeClass(self.opt.uncheckedHoverClass);
 						} else {
-							label.addClass(self.opt.checkedClass).removeClass(self.opt.hoverCheckedClass);
+							label.addClass(self.opt.checkedClass).removeClass(self.opt.checkedHoverClass);
 						}
 					}
 				}).click(function(evt) {
@@ -74,15 +74,15 @@
 
 					var label = $(this);
 
-					if (!label.hasClass(self.opt.disabledClass) && !label.hasClass(self.opt.disabledCheckedClass)) {
+					if (!label.hasClass(self.opt.uncheckedDisabledClass) && !label.hasClass(self.opt.checkedDisabledClass)) {
 						if (label.hasClass(self.opt.checkedClass)) {
 							if (!isRadio) {
 								label.addClass(self.opt.uncheckedClass).removeClass(self.opt.checkedClass);
 								$this.removeAttr('checked');
 							}
-						} else if (label.hasClass(self.opt.hoverCheckedClass)) {
+						} else if (label.hasClass(self.opt.checkedHoverClass)) {
 							if (!isRadio) {
-								label.addClass(self.opt.hoverClass).removeClass(self.opt.hoverCheckedClass);
+								label.addClass(self.opt.uncheckedHoverClass).removeClass(self.opt.checkedHoverClass);
 								$this.removeAttr('checked');
 							}
 						} else {
@@ -92,8 +92,8 @@
 								methods.uncheckByClass.call(self);
 							}
 
-							if (label.hasClass(self.opt.hoverClass)) {
-								label.addClass(self.opt.hoverCheckedClass).removeClass(self.opt.hoverClass);
+							if (label.hasClass(self.opt.uncheckedHoverClass)) {
+								label.addClass(self.opt.checkedHoverClass).removeClass(self.opt.uncheckedHoverClass);
 							} else {
 								label.addClass(self.opt.checkedClass).removeClass(self.opt.uncheckedClass);
 							}
@@ -115,7 +115,7 @@
 					opt		= $this.data('settings'),
 					label	= $this.prev('label');
 
-				if (!label.hasClass(opt.disabledClass) && !label.hasClass(opt.disabledCheckedClass)) {
+				if (!label.hasClass(opt.uncheckedDisabledClass) && !label.hasClass(opt.checkedDisabledClass)) {
 					if (isCheck) {
 						if ($this.is(':radio')) {
 							methods.uncheckByName.call(self);
@@ -127,8 +127,8 @@
 							}
 						}
 	
-						if (label.hasClass(opt.hoverClass)) {
-							label.addClass(opt.hoverCheckedClass);
+						if (label.hasClass(opt.uncheckedHoverClass)) {
+							label.addClass(opt.checkedHoverClass);
 						} else {
 							label.addClass(opt.checkedClass);
 						}
@@ -154,27 +154,27 @@
 				if (isEnable) {
 					$this.removeAttr('disabled');
 
-					if (label.hasClass(opt.disabledClass)) {
-						label.addClass(opt.uncheckedClass).removeClass(opt.disabledClass);
-					} else if (label.hasClass(opt.disabledCheckedClass)) {
-						label.addClass(opt.checkedClass).removeClass(opt.disabledCheckedClass);
+					if (label.hasClass(opt.uncheckedDisabledClass)) {
+						label.addClass(opt.uncheckedClass).removeClass(opt.uncheckedDisabledClass);
+					} else if (label.hasClass(opt.checkedDisabledClass)) {
+						label.addClass(opt.checkedClass).removeClass(opt.checkedDisabledClass);
 					}
 	
 					label.css('opacity', '1');
 				} else {
 					if ($this.is(':radio')) {
-						label.removeClass(opt.checkedClass).removeClass(opt.hoverCheckedClass);
+						label.removeClass(opt.checkedClass).removeClass(opt.checkedHoverClass);
 						$this.removeAttr('checked');					
 					}
 	
 					$this.attr('disabled', 'disabled');
 
 					if (label.hasClass(opt.checkedClass)) {
-						label.addClass(opt.disabledCheckedClass).removeClass(opt.checkedClass);
-					} else if (label.hasClass(opt.hoverCheckedClass)) {
-						label.addClass(opt.disabledCheckedClass).removeClass(opt.hoverCheckedClass);
+						label.addClass(opt.checkedDisabledClass).removeClass(opt.checkedClass);
+					} else if (label.hasClass(opt.checkedHoverClass)) {
+						label.addClass(opt.checkedDisabledClass).removeClass(opt.checkedHoverClass);
 					} else {
-						label.addClass(opt.disabledClass).removeClass(opt.uncheckedClass);
+						label.addClass(opt.uncheckedDisabledClass).removeClass(opt.uncheckedClass);
 					}
 	
 					label.css('opacity', '.6');
@@ -212,8 +212,8 @@
 
 			if (label.hasClass(self.opt.checkedClass)) {
 				label.addClass(self.opt.uncheckedClass).removeClass(self.opt.checkedClass);
-			} else if (label.hasClass(self.opt.hoverCheckedClass)) {
-				label.addClass(self.opt.hoverClass).removeClass(self.opt.hoverCheckedClass);
+			} else if (label.hasClass(self.opt.checkedHoverClass)) {
+				label.addClass(self.opt.uncheckedHoverClass).removeClass(self.opt.checkedHoverClass);
 			}
 		}, uncheckByClass: function() {
 			var self	= this,
@@ -249,13 +249,13 @@
 
 	$.fn.styly.defaults = {
 		checkedClass			: 'styly-checked',
-		disabledCheckedClass	: 'styly-disabled-checked',
-		disabledClass			: 'styly-disabled',
-		hoverClass				: 'styly-hover',
-		hoverCheckedClass		: 'styly-hover-checked',
+		checkedDisabledClass	: 'styly-checked-disabled',
+		checkedHoverClass		: 'styly-checked-hover',
 		trigger					: true,
 		uncheckAll				: false,
-		uncheckedClass			: 'styly-unchecked'
+		uncheckedClass			: 'styly-unchecked',
+		uncheckedHoverClass		: 'styly-unchecked-hover',
+		uncheckedDisabledClass	: 'styly-unchecked-disabled'
 	};
 
 })(jQuery);
