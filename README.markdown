@@ -1,14 +1,10 @@
 # jQuery Styly - A Stylish Plugin - http://wbotelhos.com/styly
 
-jQuery Styly is a plugin to style your checkbox and radio elements.
-
-## License
-
-The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/licenses/mit-license.php)
+jQuery Styly is a plugin to style checkbox and radio elements.
 
 ## Version
 
-	@version        0.2.2
+	@version        0.3.0
 	@since          2011.10.15
 	@author         Washington Botelho
 	@documentation  wbotelhos.com/styly
@@ -18,28 +14,45 @@ The jQuery Styly is licensed under [The MIT License](http://www.opensource.org/l
 
 + jquery.styly.min.js
 + jquery.styly.css
-+ check.png
-+ radio.png
++ icons.png
 
 ## Default values
 
-	trigger:     true                 // Enables trigger the fuctions element like onchange.
-	uncheckAll:  false                // Uncheck all checkbox with the same class before an especific check.
+	checkedClass            : 'styly-checked'             // Class with background used when element is checked.
+	checkedDisabledClass    : 'styly-checked-disabled'    // Class with background used when element is checked but disabled.
+	checkedHoverClass       : 'styly-checked-hover'       // Class with background used when element is checked and hovered.
+	trigger                 : true                        // Enables the events triggers.
+	uncheckAll              : false                       // Uncheck all elements with the same class before do something.
+	uncheckedClass          : 'styly-unchecked'           // Class with background used when element is unchecked.
+	uncheckedHoverClass     : 'styly-unchecked-hover'     // Class with background used when element is hovered.
+	uncheckedDisabledClass  : 'styly-unchecked-disabled'  // Class with background used when element is unchecked and disabled.
 
 ## Usage with default values
 
-	$('#like').styly();
+	$('#checkbox').styly();
 
-	<label for="like">Like?</label>
-	<input id="like" type="checkbox" />
+	<label for="checkbox">Like?</label>
+	<input id="checkbox" type="checkbox" />
 
 ## Public functions
 
-	$('#like').styly('check', true, false);
-	// Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.
+	$('#checkbox').styly('check', true, true);
+	// Checks or unchecks an element. The third parameter is optionally to trigger an binded event.
 
-	$('#like').styly('enable', true);
-	// Enables or disables an element. You can use class selector '.styly'.
+	$('.radio').styly('enable', true);
+	// Enables or disables an element.
+
+## Licence
+
+The MIT License
+
+Copyright (c) 2011 Washington Botelho
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Buy me a coffee
 

@@ -2,67 +2,24 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="-1" />
+		<meta name="keywords" content="jquery,plugin,styly,estilo,radio,checkbox,modern,skin" />
+		<meta name="description" content="jQuery Styly - A Stylish Plugin" />
 
 		<title>jQuery Styly - A Stylish Plugin</title>
+
+		<!-- This CSS does not belong to the plugin. -->
+		<link type="text/css" rel="stylesheet" href="doc/css/stylesheet.css"/>
 
 		<link type="text/css" rel="stylesheet" href="css/jquery.styly.css"/>
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.styly.min.js"></script>
 
-		<style type="text/css">
-			/* This CSS does not belong to the plugin. */
-			body { background: url('img/background.gif'); font: normal 11px verdana; }
-			
-			a { color: #2C8CBD; text-decoration: none; }
-			a:hover { color: #48A5D4; }
-			
-			a#coffee {
-				background: url('img/coffee.png') 6px 2px no-repeat #DC5; border: 1px solid #D9C640; color: #FFF; display: block; float: right; font-size: 10px; font-weight: bold; letter-spacing: .9px; margin-right: 9px; padding: 4px 5px 4px 26px; text-decoration: none;
-				-khtml-border-radius: 4px; -moz-border-radius: 4px; -opera-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-			}
-			a#coffee:hover { text-decoration: underline; }
-			
-			span.comment { color: #999; font: 12px monospace; letter-spacing: .1px; margin-bottom: 7px; margin-top: 5px; }
-			
-			div#content { background-color: #FFF; border: 1px solid #DEDEDE; box-shadow: 0 1px 3px rgba(100, 100, 100, 0.4); margin: 0 auto; padding: 15px; width: 1100px; min-height: 510px; }
-			
-			div.description { color: #555; letter-spacing: .1px; margin-bottom: 15px; margin-top: 10px; text-align: left; }
-			
-			div.description-code { color: #555; letter-spacing: .1px; margin-bottom: 10px; text-indent: 7px; }
-
-			div#menu-feature { color: #AAA; float: left; margin-bottom: 20px; }
-			div#menu-feature a { float: left; width: 120px }
-			div#menu-feature a.disabled { color: #999; cursor: default; }
-			div#menu-feature a.selected { color: #2C8CBD; cursor: default; font-weight: bold; }
-
-			div#footer { clear: both; height: 25px; margin-top: 5px; width: 100%; }
-			div#footer div#copy { margin: 0 auto; text-align: center; width: 1100px; }
-			
-			div#header { margin: 0 auto; padding-left: 20px; width: 1130px; }
-			
-			div#menu { color: #AB9927; font: bold 14px 'Lucida Grande', 'Helvetica', 'Times New Roman', serif; text-shadow: 1px 1px 1px #FFF; text-transform: uppercase; }
-			div#menu a { color: #EA9C00; font: bold 10px verdana; letter-spacing: .9px; text-decoration: none; }
-			div#menu a:hover { color: #DC5; font-weight: bold; letter-spacing: .9px; text-decoration: underline; }
-			
-			div.session { clear: both;  font: bold 13px verdana; border-bottom: 1px solid #EFEFEF; color: #444; letter-spacing: .7px; margin-bottom: 18px; margin-top: 24px; text-align: left; }
-			div.session-first { clear: both; font: bold 13px verdana; border-bottom: 1px solid #EFEFEF; color: #444; letter-spacing: .7px; margin-bottom: 18px; text-align: left; }
-			div.session-mini { font: bold 10px verdana; color: #444; letter-spacing: .7px; margin-top: 17px; }
-			
-			div.source { background: #F8F8FF; border: 1px solid #EFEFEF; border-left: 3px solid #CCC; clear: both; color: #444; font: 12px monospace; border-radius: 2px; letter-spacing: .1px; margin-bottom: 7px; margin-top: 15px; padding: 7px; width: 1081px; -khtml-border-radius: 2px; -moz-border-radius: 2px; -opera-border-radius: 2px; -webkit-border-radius: 2px; }
-			div.source div.comment { color: #777; font: 9px verdana; letter-spacing: 0.4px; margin-bottom: 9px; text-align: left; }
-			
-			div#title { font: bold 17px verdana; color: #269; letter-spacing: .7px; margin-bottom: 10px; text-align: left; }
-			div#title span { color: #777; font: 10px verdana; }
-			
-			span#version { color: #777; font: 10px verdana; }
-		</style>
-
 		<script type="text/javascript">
-			// This code does NOT belong the plugin. See the example code at the bottom of this page.
+			// This code does not belong to the plugin. See the example code at the bottom of this page.
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-194992347-10']);
 			_gaq.push(['_trackPageview']);
@@ -78,57 +35,49 @@
 		<div id="header">
 			<div id="title">
 				<a href="http://wbotelhos.com/styly">jQuery Styly - A Stylish Plugin</a>
-				<span>(current version: 0.2.2)</span>
+				<span id="version">(current version: 0.3.0)</span>
 			</div>
-	
+
 			<div id="menu">
-				<a href="http://github.com/downloads/wbotelhos/styly/jquery.styly-0.2.2.zip" target="_blank">Download</a> |
+				<a href="http://github.com/downloads/wbotelhos/styly/jquery.styly-0.3.0.zip" target="_blank">Download</a> |
 				<a href="http://github.com/wbotelhos/styly" target="_blank">Github</a> |
-				<a href="http://wbotelhos.com/styly/changelog.markdown" target="_blank">Change Log</a> |
-				<a href="http://wbotelhos.com/styly/README.markdown" target="_blank">Readme</a> |
+				<a href="http://www.wbotelhos.com/styly/changelog.markdown" target="_blank">Change Log</a> |
+				<a href="http://www.wbotelhos.com/styly/README.markdown" target="_blank">Readme</a> |
 				<a href="http://www.wbotelhos.com/2011/10/15/jquery-styly-a-stylish-plugin" target="_blank">Article</a> |
-				<a href="http://wbotelhos.com/styly/LICENSE.txt" target="_blank">License</a> |
-				<a href="http://www.wbotelhos.com/styly/who.html" target="_blank">Who is using</a> |
+				<a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">License</a> |
 				<a href="http://www.wbotelhos.com/2011/10/15/jquery-styly-a-stylish-plugin#comments" target="_blank" style="color: #2C8CBD;">Doubt</a> |
-				<a href="http://www.wbotelhos.com/labs" target="_blank" style="color: #000;">yLab</a>
+				<a href="http://www.wbotelhos.com/lab" target="_blank" style="color: #000;">yLab</a>
 			</div>
 
 			<a id="coffee" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=X8HEP2878NDEG&amp;item_name=jQuery%20Styly" target="_blank">buy me a coffee</a>
 
-			<div class="description">jQuery <strong>Styly</strong> is a plugin to style your checkbox and radio elements.</div>
+			<div class="description">jQuery <strong>Styly</strong> is a plugin to style checkbox and radio elements.</div>
 		</div>
 
 		<div id="content">
-			<div id="checkbox-default-demo" class="session-first">With default options using checkbox:</div>
+			<div class="session-first">Checkbox example:</div>
 
 			<label for="like">Like?</label>
-			<input id="like" type="checkbox" class="checkbox" />
+			<input id="like" type="checkbox" checked="checked" class="checkbox" />
 
 			<label for="dislike">Dislike?</label>
 			<input id="dislike" type="checkbox" class="checkbox" />
 
-			<div style="color: #CCC; margin-top: 5px;">
-				<a id="check-like" href="javascript:void(0);">Check (Like)</a> |
-				<a id="uncheck-like" href="javascript:void(0);">Uncheck (Like)</a> |
-				<a id="enable-like" href="javascript:void(0);">Enable (Like)</a> |
-				<a id="disable-like" href="javascript:void(0);">Disable (Like)</a> |
-				<a id="check-dislike" href="javascript:void(0);">Check (Dislike)</a> |
-				<a id="uncheck-dislike" href="javascript:void(0);">Uncheck (Dislike)</a> |
-				<a id="enable-dislike" href="javascript:void(0);">Enable (Dislike)</a> |
-				<a id="disable-dislike" href="javascript:void(0);">Disable (Dislike)</a>
-			</div>
+			<div class="source">$('.checkbox').styly();</div>
 
 			<div class="source">
-				$('.checkbox').styly();<br/><br/>
+				&lt;label for="like"&gt;Like?&lt;/label&gt;<br />
+				&lt;input id="like" type="checkbox" <span class="highlight">checked="checked"</span> class="checkbox" /&gt;<br /><br />
 
-				&lt;label for="like"&gt;Like?&lt;/label&gt;<br/>
-				&lt;input id="like" type="checkbox" class="checkbox" /&gt;<br/><br/>
-
-				&lt;label for="dislike"&gt;Dislike?&lt;/label&gt;<br/>
-				&lt;input id="dislike" type="checkbox" class="checkbox" /&gt;
+				&lt;label for="dislike"&gt;Dislike?&lt;/label&gt;<br />
+				&lt;input id="dislike" type="checkbox" class="checkbox" /&gt;<br />
 			</div>
 
-			<div id="radio-default-demo" class="session">With default options using radio:</div>
+			<div class="comment" style="">
+				+ You can starts the radio with checked, disabled or both states.<br />
+			</div>
+
+			<div class="session">Radio example:</div>
 
 			<label for="agree">Agree</label>
 			<input id="agree" type="radio" name="agreement" class="radio"/>
@@ -136,82 +85,248 @@
 			<label for="disagree">Disagree</label>
 			<input id="disagree" type="radio" name="agreement" class="radio"/>
 
-			<div style="color: #CCC; margin-top: 5px;">
-				<a id="check-agree" href="javascript:void(0);">Check (Agree)</a> |
-				<a id="uncheck-agree" href="javascript:void(0);">Uncheck (Agree)</a> |
-				<a id="enable-agree" href="javascript:void(0);">Enable (Agree)</a> |
-				<a id="disable-agree" href="javascript:void(0);">Disable (Agree)</a> |
-				<a id="check-disagree" href="javascript:void(0);">Check (Disagree)</a> |
-				<a id="uncheck-disagree" href="javascript:void(0);">Uncheck (Disagree)</a> |
-				<a id="enable-disagree" href="javascript:void(0);">Enable (Disagree)</a> |
-				<a id="disable-disagree" href="javascript:void(0);">Disable (Dislike)</a>
-			</div>
+			<div class="source">$('.radio').styly();</div>
 
 			<div class="source">
-				$('.radio').styly();<br/><br/>
+				&lt;label for="agree"&gt;Agree&lt;/label&gt;<br />
+				&lt;input id="agree" type="radio" name="agreement" class="radio"/&gt;<br /><br />
 
-				&lt;label for="agree"&gt;Like&lt;/label&gt;<br/>
-				&lt;input id="agree" type="radio" name="agreement" class="radio"/&gt;<br/><br/>
-
-				&lt;label for="disagree"&gt;Unlike&lt;/label&gt;<br/>
+				&lt;label for="disagree"&gt;Disagree&lt;/label&gt;<br />
 				&lt;input id="disagree" type="radio" name="agreement" class="radio"/&gt;
 			</div>
 
-			<div id="uncheckall-default-demo" class="session">Unchecking all before check someone:</div>
+			<div class="comment" style="">
+				+ You can starts the radio with checked, disabled or both states.<br />
+			</div>
+
+			<div class="session">Options:</div>
+
+			<div class="session-option">checkedClass: <span>'styly-checked'</span></div>
+
+			<img src="doc/img/checkedClass.png" alt="checkedClass" height="24" width="133" class="session-image" />
+
+			<div class="source">
+				<span class="highlight">.styly-checked { background: url('checked.png'); }</span>
+			</div>
+
+			<div class="source">
+				$('#checkbox').styly({ <span class="highlight">checkedClass: 'styly-checked'</span> });
+			</div>
+
+			<div class="comment">Class with background used when element is checked.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<hr />
+
+			<div class="session-option">checkedDisabledClass: <span>'styly-checked-disabled'</span></div>
+
+			<img src="doc/img/checkedDisabledClass.png" alt="checkedDisabledClass" height="26" width="132" class="session-image" />
+
+			<div class="source">
+				<span class="highlight">.styly-checked-off { background: url('checked-off.png'); }</span>
+			</div>
+
+			<div class="source">
+				$('#checkbox').styly({ <span class="highlight">checkedDisabledClass: 'styly-checked-off'</span> });
+			</div>
+
+			<div class="comment">Class with background used when element is checked but disabled.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<hr />
+
+			<div class="session-option">checkedHoverClass: <span>'styly-checked-hover'</span></div>
+
+			<img src="doc/img/checkedHoverClass.png" alt="checkedHoverClass" height="43" width="133" class="session-image" />
+
+			<div class="source">
+				<span class="highlight">.styly-checked-hover { background: url('checked-hover.png'); }</span>
+			</div>
+
+			<div class="source">
+				$('#checkbox').styly({ <span class="highlight">checkedHoverClass : 'unchecked-off'</span> });
+			</div>
+
+			<div class="comment">Class with background used when element is checked and hovered.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<hr />
+
+			<div class="session-option">trigger: <span>true</span></div>
+
+			<div class="source">
+				&lt;input type="checkbox" onclick="alert('inline event!')" /&gt;<br />
+				&lt;input id="binded" type="checkbox" /&gt;<br /><br />
+
+				$('#binded').click(function() {<br />
+				&#160;&#160;alert('binded event!');<br />
+				});
+			</div>
+
+			<div class="source">
+				$('#checkbox').styly({<br />
+				&#160;&#160;<span class="highlight">trigger: false</span><br />
+				});
+			</div>
+
+			<div class="comment">Enables the events triggers.</div>
+
+			<div class="comment-personal">
+				Explanation:<br />
+				- If you want trigger an event inline or binded on your element let it enabled;<br />
+				- The plugin must call it, because you interacts with input's label, not the real label.<br />
+			</div>
+
+			<hr />
+
+			<div class="session-option" style="margin-bottom: 10px;">uncheckAll: <span>false</span></div>
 
 			<label for="digg">Digg?</label>
-			<input id="digg" type="checkbox" class="uncheckall" />
+			<input id="digg" type="checkbox" class="digg" />
 
 			<label for="undigg">Undigg?</label>
-			<input id="undigg" type="checkbox" class="uncheckall" />
+			<input id="undigg" type="checkbox" class="digg" />
 
-			<div style="color: #CCC; margin-top: 5px;">
-				<a id="check-digg" href="javascript:void(0);">Check (Digg)</a> |
-				<a id="uncheck-digg" href="javascript:void(0);">Uncheck (Digg)</a> |
-				<a id="enable-digg" href="javascript:void(0);">Enable (Digg)</a> |
-				<a id="disable-digg" href="javascript:void(0);">Disable (Digg)</a> |
-				<a id="check-undigg" href="javascript:void(0);">Check (Undigg)</a> |
-				<a id="uncheck-undigg" href="javascript:void(0);">Uncheck (Undigg)</a> |
-				<a id="enable-undigg" href="javascript:void(0);">Enable (Undigg)</a> |
-				<a id="disable-undigg" href="javascript:void(0);">Disable (Undigg)</a>
+			<div class="source">
+				$('.checkbox').styly({ <span class="highlight">uncheckAll : true</span> });
+			</div>
+
+			<div class="comment">Uncheck all elements with the same class before do something.</div>
+
+			<div class="comment-personal">
+				Explanation:<br />
+				- You can put the same behavior of the radio on the checkbox, because you'll uncheck all before check someone;<br />
+				- Unlike radio the uncheck is based on class, because the checkbox should haven't repeated name like radi..<br />
+			</div>
+
+			<hr />
+
+			<div class="session-option">uncheckedClass: <span>'styly-unchecked'</span></div>
+
+			<img src="doc/img/uncheckedClass.png" alt="uncheckedClass" height="29" width="133" class="session-image" />
+
+			<div class="source">
+				<span class="highlight">.styly-unchecked { background: url('unchecked.png'); }</span>
 			</div>
 
 			<div class="source">
-				$('.digg').styly();<br/><br/>
-
-				&lt;label for="digg"&gt;Digg?&lt;/label&gt;<br/>
-				&lt;input id="digg" type="checkbox" class="uncheckall" /&gt;<br/><br/>
-
-				&lt;label for="undigg"&gt;Undigg?&lt;/label&gt;<br/>
-				&lt;input id="undigg" type="checkbox" class="uncheckall" /&gt;
+				$('#checkbox').styly({ <span class="highlight">uncheckedClass : 'styly-unchecked'</span> });
 			</div>
 
-			<div class="session">Default options:</div>
+			<div class="comment">Class with background used when element is unchecked.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<hr />
+
+			<div class="session-option">uncheckedHoverClass: <span>'styly-unchecked-hover'</span></div>
+
+			<img src="doc/img/uncheckedHoverClass.png" alt="uncheckedHoverClass" height="33" width="133" class="session-image" />
 
 			<div class="source">
-				trigger:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;true
-				<div class="comment">Enables trigger the fuctions element like onchange.</div>
-
-				uncheckAll:&nbsp;&nbsp;&nbsp;false
-				<div class="comment">Uncheck all checkbox with the same class before an especific check.</div>
+				<span class="highlight">.styly-unchecked-hover { background: url('unchecked-hover.png'); }</span>
 			</div>
+
+			<div class="source">
+				$('#checkbox').styly({ <span class="highlight">uncheckedHoverClass: 'unchecked-hover'</span> });
+			</div>
+
+			<div class="comment">Class with background used when element is hovered.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<hr />
+
+			<div class="session-option">uncheckedDisabledClass: <span>'styly-unchecked-disabled'</span></div>
+
+			<img src="doc/img/uncheckedDisabledClass.png" alt="uncheckedDisabledClass" height="26" width="132" class="session-image" />
+
+			<div class="source">
+				<span class="highlight">.styly-unchecked-off { background: url('unchecked-off.png'); }</span>
+			</div>
+
+			<div class="source">
+				$('#checkbox').styly({ <span class="highlight">uncheckedDisabledClass: 'unchecked-off'</span> });
+			</div>
+
+			<div class="comment">Class with background used when element is unchecked and disabled.</div>
+
+			<div class="comment-personal"><br />
+				Explanation:<br />
+				- It is a class with a background on an especific postion to present the right icon;<br />
+				- The prefix 'styly-' is good to avoid conflicts.
+			</div>
+
+			<div id="global-demo" class="session">Changing the settings globally:</div>
+
+			<div class="source">
+				$.fn.catchy.defaults.trigger = false;<br/>
+				$.fn.catchy.defaults.checkedClass = 'big-check';
+			</div>
+
+			<span class="comment">
+				- You can change any option mention the scope <b>$.fn.styly.defaults.</b> + <i>option_name</i>;<br/>
+				- This setup must be called before you bind the Styly, of course.
+			</span>
 
 			<div class="session">Public functions:</div>
-			
-			<div class="source">$('#like').styly('check', true, false);</div>
-			<div class="description-code">Checks or unchecks an element. The third parameter is optionally and trigger or not the element event.</div>
 
-			<div class="source">$('#like').styly('enable', true);</div>
-			<div class="description-code">Enables or disables an element. You can use class selector '.styly'.</div>
+			<label for="checkbox-a">#checkbox-a / .checkboxes</label>
+			<input id="checkbox-a" type="checkbox" name="checkbox" class="checkboxes"/>
 
-			<a id="check-all" href="javascript:void(0);">Check All</a> |
-			<a id="uncheck-all" href="javascript:void(0);">Uncheck All</a> |
-			<a id="enable-all" href="javascript:void(0);">Enable All</a> |
-			<a id="disable-all" href="javascript:void(0);">Disable All</a>
+			<label for="checkbox-b">#checkbox-b / .checkboxes</label>
+			<input id="checkbox-b" type="checkbox" name="checkbox" class="checkboxes"/>
+
+			<label for="radio-a">#radio-a / .radios</label>
+			<input id="radio-a" type="radio" name="radio" class="radios"/>
+
+			<label for="radio-b">#radio-b / .radios</label>
+			<input id="radio-b" type="radio" name="radio" class="radios"/>
+
+			<div class="action-wrapper">
+				Element: <input id="check-id" type="text" value="#checkbox-a" class="action-field" />
+				<a id="check-action" href="javascript:void(0);" title="check" class="action-link">check</a>
+				<a id="uncheck-action" href="javascript:void(0);" title="uncheck" class="action-link">uncheck</a>
+			</div>
+
+			<div class="action-wrapper">
+				Element: <input id="enable-id" type="text" value="#checkbox-a" class="action-field" />
+				<a id="enable-action" href="javascript:void(0);" title="enable" class="action-link">enable</a>
+				<a id="disable-action" href="javascript:void(0);" title="disable" class="action-link">disable</a>
+			</div>
+
+			<div class="source">$('#checkbox').styly('check', true, true);</div>
+			<div class="description-code">Checks or unchecks an element. The third parameter is optionally to trigger an binded event.</div>
+
+			<div class="source">$('.radio').styly('enable', true);</div>
+			<div class="description-code">Enables or disables an element.</div>
 		</div>
 
 		<div id="footer">
-			<div id="copy">&copy; 2011 <a href="http://www.wbotelhos.com/" target="_blank">wbotelhos.com</a></div>
+			<div>&copy; 2011 <a href="http://www.wbotelhos.com" target="_blank">wbotelhos.com</a></div>
 		</div>
 
 		<script type="text/javascript">
@@ -221,44 +336,29 @@
 
 				$('.radio').styly();
 
-				$('.uncheckall').styly({ uncheckAll: true });
+				$('.digg').styly({ uncheckAll: true });
 
-				$('#check-like').click(function() { $('#like').styly('check', true); });
-				$('#uncheck-like').click(function() { $('#like').styly('check', false); });
-				$('#enable-like').click(function() { $('#like').styly('enable', true); });
-				$('#disable-like').click(function() { $('#like').styly('enable', false); });
+				$('.checkboxes').styly();
 
-				$('#check-dislike').click(function() { $('#dislike').styly('check', true); });
-				$('#uncheck-dislike').click(function() { $('#dislike').styly('check', false); });
-				$('#enable-dislike').click(function() { $('#dislike').styly('enable', true); });
-				$('#disable-dislike').click(function() { $('#dislike').styly('enable', false); });
+				$('.radios').styly();
 
-				$('#check-agree').click(function() { $('#agree').styly('check', true); });
-				$('#uncheck-agree').click(function() { $('#agree').styly('check', false); });
-				$('#enable-agree').click(function() { $('#agree').styly('enable', true); });
-				$('#disable-agree').click(function() { $('#agree').styly('enable', false); });
+				$('#check-action').on('click', function() {
+					$($('#check-id').val()).styly('check', true);
+				});
 
-				$('#check-disagree').click(function() { $('#disagree').styly('check', true); });
-				$('#uncheck-disagree').click(function() { $('#disagree').styly('check', false); });
-				$('#enable-disagree').click(function() { $('#disagree').styly('enable', true); });
-				$('#disable-disagree').click(function() { $('#disagree').styly('enable', false); });
+				$('#uncheck-action').on('click', function() {
+					$($('#check-id').val()).styly('check', false);
+				});
 
-				$('#check-digg').click(function() { $('#digg').styly('check', true); });
-				$('#uncheck-digg').click(function() { $('#digg').styly('check', false); });
-				$('#enable-digg').click(function() { $('#digg').styly('enable', true); });
-				$('#disable-digg').click(function() { $('#digg').styly('enable', false); });
+				$('#enable-action').on('click', function() {
+					$($('#enable-id').val()).styly('enable', true);
+				});
 
-				$('#check-undigg').click(function() { $('#undigg').styly('check', true); });
-				$('#uncheck-undigg').click(function() { $('#undigg').styly('check', false); });
-				$('#enable-undigg').click(function() { $('#undigg').styly('enable', true); });
-				$('#disable-undigg').click(function() { $('#undigg').styly('enable', false); });
+				$('#disable-action').on('click', function() {
+					var id = $('#enable-id').val();
 
-				var $allCheckAndRadio = $('input[type="checkbox"], input[type="radio"]');
-
-				$('#check-all').click(function() { $allCheckAndRadio.styly('check', true); });
-				$('#uncheck-all').click(function() { $allCheckAndRadio.styly('check', false); });
-				$('#enable-all').click(function() { $allCheckAndRadio.styly('enable', true); });
-				$('#disable-all').click(function() { $allCheckAndRadio.styly('enable', false); });
+					$($('#enable-id').val()).styly('enable', false);
+				});
 
 			});
 		</script>
