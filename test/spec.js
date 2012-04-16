@@ -1435,14 +1435,14 @@ describe('Using radio', function() {
 		expect(inputs.eq(0)).toBeDisabled();
 	});
 
-	it ('[radio] should not check other when the checked one id disabled', function() {
+	it ('[radio] should not check other when the checked one is disabled', function() {
 		// given
 		var inputs = $('.radio').styly(),
 			labels = inputs.prev('label');
 
 		// when
 		inputs.eq(0).styly('check', true).styly('enable', false);
-		//labels.eq(1).click();
+		labels.eq(1).click();
 
 		// then
 		expect(labels.eq(0)).not.toHaveClass('styly-unchecked');
