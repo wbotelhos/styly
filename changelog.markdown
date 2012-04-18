@@ -4,12 +4,9 @@
 
 + Better support to start Styly checked, disabled or both;
 + Now we have just one sheet image;
++ Fixed checked and disabled initial states;
 + Now checked radio can be disabled and keeps checked:
 	- If you disable a checked radio, all group is disabled automatically.
-
-### 0.3.0
-
-+ Fixed initialization state hovered and checked.
 
 ### 0.2.1
 
